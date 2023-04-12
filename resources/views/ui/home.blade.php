@@ -223,58 +223,21 @@
                 </div>
             </div>
             <div class="row">
+                @foreach($courses as $value)
                 <div class="col-md-3 course ftco-animate">
-                    <div class="img" style="background-image: url({{asset('assets/images/course-1.jpg')}});"></div>
+                    <div class="img" style="background-image: url({{asset("$value->image")}});"></div>
                     <div class="text pt-4">
                         <p class="meta d-flex">
-                            <span><i class="icon-user mr-2"></i>IELTS</span>
-                            <span><i class="icon-table mr-2"></i>a lot of</span>
-                            <span><i class="icon-calendar mr-2"></i>6 months</span>
+                            <span><i class="icon-user mr-2"></i>{{$value->course_name}}</span>
+                            <span><i class="icon-table mr-2"></i>{{$value->count_students}}</span>
+                            <span><i class="icon-calendar mr-2"></i>{{$value->duration}}</span>
                         </p>
-                        <h3><a href="registration.html">IELTS</a></h3>
-                        <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
+                        <h3><a href="registration.html">{{$value->course_name}}</a></h3>
+                        <p>{{$value->about}}</p>
                         <p><a href="registration.html" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center custom-btn btn-9">Apply now</a></p>
                     </div>
                 </div>
-                <div class="col-md-3 course ftco-animate">
-                    <div class="img" style="background-image: url({{asset('assets/images/course-2.jpg')}});"></div>
-                    <div class="text pt-4">
-                        <p class="meta d-flex">
-                            <span><i class="icon-user mr-2"></i>General English</span>
-                            <span><i class="icon-table mr-2"></i>a lot of</span>
-                            <span><i class="icon-calendar mr-2"></i>1 Year</span>
-                        </p>
-                        <h3><a href="registration.html">General English</a></h3>
-                        <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
-                        <p><a href="registration.html" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center custom-btn btn-9">Apply now</a></p>
-                    </div>
-                </div>
-                <div class="col-md-3 course ftco-animate">
-                    <div class="img" style="background-image: url({{asset('assets/images/course-3.jpg')}});"></div>
-                    <div class="text pt-4">
-                        <p class="meta d-flex">
-                            <span><i class="icon-user mr-2"></i>Grammer</span>
-                            <span><i class="icon-table mr-2"></i>a lot of</span>
-                            <span><i class="icon-calendar mr-2"></i>6 months</span>
-                        </p>
-                        <h3><a href="registration.html">Individual Grammer</a></h3>
-                        <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
-                        <p><a href="registration.html" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center custom-btn btn-9">Apply now</a></p>
-                    </div>
-                </div>
-                <div class="col-md-3 course ftco-animate">
-                    <div class="img" style="background-image: url({{asset('assets/images/course-4.jpg')}});"></div>
-                    <div class="text pt-4">
-                        <p class="meta d-flex">
-                            <span><i class="icon-user mr-2"></i>Speaking</span>
-                            <span><i class="icon-table mr-2"></i>a lot of</span>
-                            <span><i class="icon-calendar mr-2"></i>6 months</span>
-                        </p>
-                        <h3><a href="registration.html">Speaking</a></h3>
-                        <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
-                        <p><a href="registration.html" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center custom-btn btn-9">Apply now</a></p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
