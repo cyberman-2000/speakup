@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('event_name');
             $table->string('mini_title');
             $table->text('full_information');
-            $table->date('when');
+            $table->dateTime('when');
+            $table->string('image');
             $table->timestamps();
         });
     }

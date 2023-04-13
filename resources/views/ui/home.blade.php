@@ -83,7 +83,7 @@
         <div class="container">
             <div class="row d-flex">
                 <div class="col-md-5 order-md-last wrap-about wrap-about d-flex align-items-stretch">
-                    <div class="img" style="background-image: url({{asset('assets/images/about.jpg')}}); border"></div>
+                    <div class="img" style="background-image: url({{asset('assets/images/about.jpg')}});"></div>
                 </div>
                 <div class="col-md-7 wrap-about py-5 pr-md-4 ftco-animate">
                     <h2 class="mb-4">What We Offer</h2>
@@ -251,16 +251,18 @@
                 </div>
             </div>
             <div class="row">
+
+                @foreach($teachers as $value)
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="staff">
                         <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image: url({{asset('assets/images/teacher-1.jpg')}});"></div>
+                            <div class="img align-self-stretch" style="background-image: url({{asset("$value->image")}});"></div>
                         </div>
                         <div class="text pt-3 text-center">
-                            <h3>Bianca Wilson</h3>
-                            <span class="position mb-2">Teacher</span>
+                            <h3>{{$value->name}} {{$value->last_name}}</h3>
+                            <span class="position mb-2">{{$value->role}}</span>
                             <div class="faded">
-                                <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+                                <p>{{$value->about}}</p>
                                 <ul class="ftco-social text-center">
                                     <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                                     <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -271,66 +273,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 ftco-animate">
-                    <div class="staff">
-                        <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image: url({{asset('assets/images/teacher-2.jpg')}});"></div>
-                        </div>
-                        <div class="text pt-3 text-center">
-                            <h3>Mitch Parker</h3>
-                            <span class="position mb-2">English Teacher</span>
-                            <div class="faded">
-                                <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 ftco-animate">
-                    <div class="staff">
-                        <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image: url({{asset('assets/images/teacher-3.jpg')}});"></div>
-                        </div>
-                        <div class="text pt-3 text-center">
-                            <h3>Stella Smith</h3>
-                            <span class="position mb-2">Art Teacher</span>
-                            <div class="faded">
-                                <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 ftco-animate">
-                    <div class="staff">
-                        <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image: url({{asset('assets/images/teacher-4.jpg')}});"></div>
-                        </div>
-                        <div class="text pt-3 text-center">
-                            <h3>Monshe Henderson</h3>
-                            <span class="position mb-2">Science Teacher</span>
-                            <div class="faded">
-                                <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </section>
@@ -400,18 +344,28 @@
                 </div>
             </div>
             <div class="row">
+                @foreach($news as $value)
+                    <?php
+                        $ts= strtotime($value->when);
+                        $day= date('d', $ts);
+                        $month=date('M', $ts);
+                        $year=date('Y', $ts);
+                        $time= date('H:i', $ts);
+                        ?>
                 <div class="col-md-6 col-lg-4 ftco-animate">
                     <div class="blog-entry">
-                        <a href="blog-single.html" class="block-20 d-flex align-items-end" style="background-image: url('{{asset('assets/images/image_1.jpg')}}');">
+                        <a href="blog-single.html" class="block-20 d-flex align-items-end" style="background-image: url('{{asset("$value->image")}}');">
                             <div class="meta-date text-center p-2">
-                                <span class="day">26</span>
-                                <span class="mos">June</span>
-                                <span class="yr">2019</span>
+                                <span class="day">{{$day}}</span>
+                                <span class="mos">{{$month}}</span>
+                                <span class="day">{{$time}}</span>
+                                <span class="yr">{{$year}}</span>
+
                             </div>
                         </a>
                         <div class="text bg-white p-4">
-                            <h3 class="heading"><a href="#">Skills To Develop Your Child Memory</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                            <h3 class="heading"><a href="#">{{$value->event_name}}</a></h3>
+                            <p>{{$value->mini_title}}</p>
                             <div class="d-flex align-items-center mt-4">
                                 <p class="mb-0"><a href="#" class="btn btn-primary btn-read">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
                                 <p class="ml-auto mb-0">
@@ -422,50 +376,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 ftco-animate">
-                    <div class="blog-entry">
-                        <a href="blog-single.html" class="block-20 d-flex align-items-end" style="background-image: url('{{asset('assets/images/image_2.jpg')}}');">
-                            <div class="meta-date text-center p-2">
-                                <span class="day">26</span>
-                                <span class="mos">June</span>
-                                <span class="yr">2019</span>
-                            </div>
-                        </a>
-                        <div class="text bg-white p-4">
-                            <h3 class="heading"><a href="#">Skills To Develop Your Child Memory</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            <div class="d-flex align-items-center mt-4">
-                                <p class="mb-0"><a href="#" class="btn btn-primary btn-read">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
-                                <p class="ml-auto mb-0">
-                                    <a href="#" class="mr-2">Admin</a>
-                                    <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 ftco-animate">
-                    <div class="blog-entry">
-                        <a href="blog-single.html" class="block-20 d-flex align-items-end" style="background-image: url('{{asset('assets/images/image_3.jpg')}}');">
-                            <div class="meta-date text-center p-2">
-                                <span class="day">26</span>
-                                <span class="mos">June</span>
-                                <span class="yr">2019</span>
-                            </div>
-                        </a>
-                        <div class="text bg-white p-4">
-                            <h3 class="heading"><a href="#">Skills To Develop Your Child Memory</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            <div class="d-flex align-items-center mt-4">
-                                <p class="mb-0"><a href="#" class="btn btn-primary btn-read">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
-                                <p class="ml-auto mb-0">
-                                    <a href="#" class="mr-2">Admin</a>
-                                    <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -526,7 +437,7 @@
                         </div>
                         <div class="item">
                             <div class="testimony-wrap d-flex">
-                                <div class="user-img mr-4" style="background-image: url{{asset('assets/images/teacher-4.jpg')}}()">
+                                <div class="user-img mr-4" style="background-image: url({{asset('assets/images/teacher-4.jpg')}})">
                                 </div>
                                 <div class="text ml-2">
                   	<span class="quote d-flex align-items-center justify-content-center">
