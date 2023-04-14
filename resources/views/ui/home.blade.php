@@ -229,7 +229,7 @@
                     <div class="text pt-4">
                         <p class="meta d-flex">
                             <span><i class="icon-user mr-2"></i>{{$value->course_name}}</span>
-                            <span><i class="icon-table mr-2"></i>{{$value->count_students}}</span>
+                            <span><i class="icon-table mr-2"></i>{{$value->count_students}} students</span>
                             <span><i class="icon-calendar mr-2"></i>{{$value->duration}}</span>
                         </p>
                         <h3><a href="registration.html">{{$value->course_name}}</a></h3>
@@ -264,7 +264,7 @@
                             <div class="faded">
                                 <p>{{$value->about}}</p>
                                 <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                                    <li class="ftco-animate"><a href="#"><span class="icon-telegram"></span></a></li>
                                     <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
                                     <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
                                     <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
@@ -303,6 +303,11 @@
                             </div>
                             <div class="d-md-flex">
                                 <div class="form-group">
+                                    <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="d-md-flex">
+                                <div class="form-group">
                                     <div class="form-field">
                                         <div class="select-wrap">
                                             <div class="icon"><span class="ion-ios-arrow-down"></span></div>
@@ -316,19 +321,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group ml-md-4 form-item">
-                                    <input type="text" id="phone" class="form-control">
-                                    <label for="phone" class="label">Phone</label>
-                                </div>
-                            </div>
-                            <div class="d-md-flex">
-                                <div class="form-group">
-                                    <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
-                                </div>
                                 <div class="form-group ml-md-4">
                                     <input type="submit" value="Submit" class="btn btn-primary py-3 px-4">
                                 </div>
                             </div>
+
+
                         </form>
                     </div>
                 </div>

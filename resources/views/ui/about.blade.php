@@ -184,7 +184,7 @@
         <div class="container-wrap">
             <div class="row no-gutters">
                 <div class="col-md-3 ftco-animate">
-                    <a href="{{asset('assets/images/image_1.jpg')}}" class="gallery image-popup img d-flex align-items-center" style="background-image: url({{asset('assets/images/course-1.jpg')}});">
+                    <a href="{{asset('assets/images/image_1.jpg')}}" class="gallery image-popup img d-flex align-items-center" style="background-image: url({{asset('assets/images/image_1.jpg')}});">
                         <div class="icon mb-4 d-flex align-items-center justify-content-center">
                             <span class="icon-instagram"></span>
                         </div>
@@ -193,7 +193,7 @@
                 <div class="col-md-3 ftco-animate">
                     <a href="{{asset('assets/images/image_2.jpg')}}" class="gallery image-popup img d-flex align-items-center" style="background-image: url({{asset('assets/images/image_2.jpg')}});">
                         <div class="icon mb-4 d-flex align-items-center justify-content-center">
-                            <span class="icon-instagram"></span>
+                            <span href="http://google.com" class="icon-instagram"></span>
                         </div>
                     </a>
                 </div>

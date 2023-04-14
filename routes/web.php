@@ -15,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[HomeController::class,'index']);
-Route::get('/about',function (){
-    return view('ui/about');
+Route::get('/',[HomeController::class,'index'])->name('home');
+//Route::get('/about',[HomeController::class,'home_about'])->name('home_about');
+Route::get('/{page}',[HomeController::class,'home_pages'])->name('pages');
+//Route::get('/courses',[HomeController::class,'home_courses'])->name('home_courses');
+//Route::get('teachers',HomeController::class,'teachers');
+Route::prefix('admin')->group(function () {
+    Route::resource('courses',CoursesController::class);
 });
-Route::resource('courses',CoursesController::class);
+//Route::resource('courses',CoursesController::class);

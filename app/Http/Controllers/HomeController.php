@@ -15,4 +15,10 @@ class HomeController extends Controller
         $news=News::all();
         return view('ui.home',compact(['courses','teachers','news']));
     }
+    public function home_pages($page){
+        $courses=Courses::all();
+        $teachers=Teachers::all();
+        $news=News::all();
+        return view("ui.$page",compact(['courses','teachers','news']));
+    }
 }

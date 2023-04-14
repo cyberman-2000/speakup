@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Courses;
+use App\Models\Commets;
 use Illuminate\Http\Request;
 
-class CoursesController extends Controller
+class CommetsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class CoursesController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class CoursesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Courses  $courses
+     * @param  \App\Models\Commets  $commets
      * @return \Illuminate\Http\Response
      */
-    public function show(Courses $courses)
+    public function show(Commets $commets)
     {
         //
     }
@@ -52,10 +52,10 @@ class CoursesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Courses  $courses
+     * @param  \App\Models\Commets  $commets
      * @return \Illuminate\Http\Response
      */
-    public function edit(Courses $courses)
+    public function edit(Commets $commets)
     {
         //
     }
@@ -64,10 +64,10 @@ class CoursesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Courses  $courses
+     * @param  \App\Models\Commets  $commets
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Courses $courses)
+    public function update(Request $request, Commets $commets)
     {
         //
     }
@@ -75,12 +75,11 @@ class CoursesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Courses  $courses
+     * @param  \App\Models\Commets  $commets
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Courses $courses)
+    public function destroy(Commets $commets)
     {
         //
     }
-
 }

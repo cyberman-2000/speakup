@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="{{asset('assets/css/fonts.css')}}" rel="stylesheet">
+{{--    <link href="{{asset('assets/css/fonts.css')}}" rel="stylesheet">--}}
 
     <link rel="stylesheet" href="{{asset('assets/css/open-iconic-bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
@@ -71,12 +71,12 @@
         </form>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a href="index.html" class="nav-link pl-0">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
-                <li class="nav-item"><a href="teacher.html" class="nav-link">Staff</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item active"><a href="{{route('home')}}" class="nav-link pl-0">Home</a></li>
+                <li class="nav-item"><a href="{{route('pages',['page'=>'about'])}}" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="{{route('pages',['page'=>'courses'])}}" class="nav-link">Courses</a></li>
+                <li class="nav-item"><a href="{{route('pages',['page'=>'teachers'])}}" class="nav-link">Staff</a></li>
+                <li class="nav-item"><a href="{{route('pages',['page'=>'news'])}}" class="nav-link">News</a></li>
+                <li class="nav-item"><a href="{{route('pages',['page'=>'contact'])}}" class="nav-link">Contact</a></li>
                 <li class="nav-item"><a href="registration.html" class="nav-link">Registration</a></li>
             </ul>
         </div>
@@ -136,12 +136,12 @@
                 <div class="ftco-footer-widget mb-5 ml-md-4">
                     <h2 class="ftco-heading-2">Links</h2>
                     <ul class="list-unstyled">
-                        <li><a href="index.html"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
-                        <li><a href="about.html"><span class="ion-ios-arrow-round-forward mr-2"></span>About</a></li>
-                        <li><a href="courses.html"><span class="ion-ios-arrow-round-forward mr-2"></span>Courses</a></li>
-                        <li><a href="teacher.html"><span class="ion-ios-arrow-round-forward mr-2"></span>Staff</a></li>
-                        <li><a href="blog.html"><span class="ion-ios-arrow-round-forward mr-2"></span>Blog</a></li>
-                        <li><a href="contact.html"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
+                        <li><a href="{{route('home')}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
+                        <li><a href="{{route('pages',['page'=>'about'])}}"><span class="ion-ios-arrow-round-forward mr-2"></span>About</a></li>
+                        <li><a href="{{route('pages',['page'=>'courses'])}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Courses</a></li>
+                        <li><a href="{{route('pages',['page'=>'teachers'])}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Staff</a></li>
+                        <li><a href="{{route('pages',['page'=>'news'])}}><span class="ion-ios-arrow-round-forward mr-2"></span>Blog</a></li>
+                        <li><a href="{{route('pages',['page'=>'contact'])}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
                         <li><a href="registration.html"><span class="ion-ios-arrow-round-forward mr-2"></span>Registration</a></li>
                     </ul>
                 </div>
