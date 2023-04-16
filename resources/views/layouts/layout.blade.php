@@ -28,7 +28,7 @@
     <div class="container">
         <div class="row no-gutters d-flex align-items-center align-items-stretch">
             <div class="col-md-4 d-flex align-items-center py-4">
-                <a class="navbar-brand" href="index.html"><img class="logo" src="{{asset('assets/images/LogoSpeakUpRed.png')}}" alt="logo"></a>
+                <a class="navbar-brand" href="{{route('pages',['page'=>'home'])}}"><img class="logo" src="{{asset('assets/images/LogoSpeakUpRed.png')}}" alt="logo"></a>
             </div>
             <div class="col-lg-8 d-block">
                 <div class="row d-flex">
@@ -48,8 +48,8 @@
                     </div>
                     <div class="col-md topper d-flex align-items-center justify-content-end">
                         <p class="mb-0">
-                            <a href="registration.html" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center custom-btn btn-9">
-                                <span>Apply now</span>
+                            <a href="{{route('pages',['page'=>'registration'])}}" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center custom-btn btn-9">
+                                <span>Kursga yo'zilish</span>
                             </a>
                         </p>
                     </div>
@@ -66,7 +66,7 @@
         <form action="#" class="searchform order-lg-last">
             <div class="form-group d-flex">
                 <input type="text" class="form-control pl-3" placeholder="Search">
-                <button type="submit" placeholder="" class="form-control search"><span class="ion-ios-search"></span></button>
+                <button type="submit" class="form-control search"><span class="ion-ios-search"></span></button>
             </div>
         </form>
         <div class="collapse navbar-collapse" id="ftco-nav">
@@ -77,7 +77,7 @@
                 <li class="nav-item"><a href="{{route('pages',['page'=>'teachers'])}}" class="nav-link">Staff</a></li>
                 <li class="nav-item"><a href="{{route('pages',['page'=>'news'])}}" class="nav-link">News</a></li>
                 <li class="nav-item"><a href="{{route('pages',['page'=>'contact'])}}" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="registration.html" class="nav-link">Registration</a></li>
+                <li class="nav-item"><a href="{{route('pages',['page'=>'registration'])}}" class="nav-link">Registration</a></li>
             </ul>
         </div>
     </div>
@@ -140,9 +140,9 @@
                         <li><a href="{{route('pages',['page'=>'about'])}}"><span class="ion-ios-arrow-round-forward mr-2"></span>About</a></li>
                         <li><a href="{{route('pages',['page'=>'courses'])}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Courses</a></li>
                         <li><a href="{{route('pages',['page'=>'teachers'])}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Staff</a></li>
-                        <li><a href="{{route('pages',['page'=>'news'])}}><span class="ion-ios-arrow-round-forward mr-2"></span>Blog</a></li>
+                        <li><a href="{{route('pages',['page'=>'news'])}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Blog</a></li>
                         <li><a href="{{route('pages',['page'=>'contact'])}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
-                        <li><a href="registration.html"><span class="ion-ios-arrow-round-forward mr-2"></span>Registration</a></li>
+                        <li><a href="{{route('pages',['page'=>'registration'])}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Registration</a></li>
                     </ul>
                 </div>
             </div>
