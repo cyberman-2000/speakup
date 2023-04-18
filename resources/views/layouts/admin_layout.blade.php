@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('adminaka/images/favicon.png')}}">
+{{--    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('adminaka/images/favicon.png')}}">--}}
     <!-- Pignose Calender -->
     <link href="{{asset('adminaka/plugins/pg-calendar/css/pignose.calendar.min.css')}}" rel="stylesheet">
     <!-- Chartist -->
@@ -230,7 +230,12 @@
                                     <li>
                                         <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
                                     </li>
-                                    <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                    <li>
+                                        <form action="{{route('logout')}}" method="post">
+                                            @csrf
+                                            <button type="submit" class="btn btn-outline-danger"><i class="icon-key"></i> <span>Logout</span></button>
+                                        </form>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
