@@ -21,7 +21,7 @@ Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/{page}',[HomeController::class,'home_pages'])->name('pages');
 //Route::get('/courses',[HomeController::class,'home_courses'])->name('home_courses');
 //Route::get('teachers',HomeController::class,'teachers');
-Route::prefix('/admin/admin')->group(function () {
+Route::prefix('/admin/adminaka')->group(function () {
     Route::get('/',[AdminHomeController::class,'index']);
     Route::resource('courses',CoursesController::class);
 });
