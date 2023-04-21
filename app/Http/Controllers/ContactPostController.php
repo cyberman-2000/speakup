@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PochtaRequest;
 use App\Models\ContactPost;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class ContactPostController extends Controller
      */
     public function index()
     {
-        //
+        $pochta=ContactPost::all();
+//        dd($pochta);
+        return view('adminaka.pochta');
     }
 
     /**
@@ -24,7 +27,7 @@ class ContactPostController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -33,9 +36,11 @@ class ContactPostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PochtaRequest $request)
     {
-        //
+//        dd($request);
+        $create=ContactPost::create($request->validated());
+        return redirect()->back()->with('success', 'So\'rovingiz qabul qilindi');
     }
 
     /**

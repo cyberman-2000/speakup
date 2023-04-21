@@ -2,6 +2,13 @@
 @section('content_bar')
     <section class="hero-wrap hero-wrap-2" style="background-image: url('{{asset('assets/images/bg_1.jpg')}}');">
         <div class="overlay"></div>
+        @if (\Session::has('success'))
+            <div class="alert alert-success">
+
+                    {!! \Session::get('success') !!}
+
+            </div>
+        @endif
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate text-center fadeInUp ftco-animated">
@@ -45,18 +52,36 @@
         <div class="container">
             <div class="row d-flex align-items-stretch no-gutters">
                 <div class="col-md-6 p-4 p-md-5 order-md-last bg-light">
-                    <form action="#">
+                    <form action="{{route('pochta.store')}}" method="post">
+                        @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name">
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{old('name')}}" placeholder="Your Name">
+                            @error('name')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">+998</span>
+                                </div>
+                            <input type="text" aria-label="Username" aria-describedby="basic-addon1" value="{{old('phone_number')}}" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" placeholder="Your Phone Number">
+                            </div>
+                            @error('phone_number')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject">
+                            <input type="text" name="subject"  class="form-control @error('subject') is-invalid @enderror" value="{{old('subject')}}" placeholder="Subject">
+                            @error('subject')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group">
-                            <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                            <textarea name="message" id="" cols="30" rows="7" class="form-control @error('message') is-invalid @enderror" placeholder="Message">{{old('message') }}</textarea>
+                            @error('message')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5 btn-read">

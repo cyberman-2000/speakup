@@ -45,7 +45,7 @@
     ***********************************-->
     <div class="nav-header">
         <div class="brand-logo">
-            <a href="index.html">
+            <a href="{{route('admin_home')}}">
                 <b class="logo-abbr"><img src="{{asset('adminaka/images/LogoSpeakUpDD.png')}}" alt=""> </b>
                 <span class="logo-compact"><img src="{{asset('adminaka/images/LogoSpeakUpDD.png')}}" alt=""></span>
                 <span class="brand-title">
@@ -196,19 +196,6 @@
                             </div>
                         </div>
                     </li>
-                    <li class="icons dropdown d-none d-md-flex">
-                        <a href="javascript:void(0)" class="log-user"  data-toggle="dropdown">
-                            <span>English</span>  <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
-                        </a>
-                        <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
-                            <div class="dropdown-content-body">
-                                <ul>
-                                    <li><a href="javascript:void()">English</a></li>
-                                    <li><a href="javascript:void()">Dutch</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
                     <li class="icons dropdown">
                         <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
                             <span class="activity active"></span>
@@ -261,7 +248,7 @@
                         <i class="icon-envelope menu-icon"></i> <span class="nav-text">Email</span>
                     </a>
                     <ul aria-expanded="false">
-                        <li><a href="./email-inbox.html">Pochta</a></li>
+                        <li><a href="{{route('pochta.index')}}">Pochta</a></li>
                         <li><a href="./email-compose.html">Yo'zish</a></li>
                     </ul>
                 </li>
@@ -311,8 +298,7 @@
         Content body start
     ***********************************-->
     <div class="content-body">
-
-
+            @yield('admin_content')
 
         </div>
         <!-- #/ container -->
