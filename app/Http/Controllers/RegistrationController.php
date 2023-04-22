@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegistrationRequest;
 use App\Models\Registration;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class RegistrationController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -33,9 +34,12 @@ class RegistrationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RegistrationRequest $request)
     {
-        //
+//        dd($request->validated());
+        $create=Registration::create($request->validated());
+        return redirect()->back()->with('success', 'Siz muvaffaqiyatli kursga yozildingiz. Tez orada siz bilan bo\'glananishadi. Bizni tanlaganingiz uchun Rahmat!!!!');
+
     }
 
     /**
