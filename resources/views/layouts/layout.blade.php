@@ -148,15 +148,6 @@
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="ftco-footer-widget mb-5">
-                    <h2 class="ftco-heading-2">Subscribe Us!</h2>
-                    <form action="#" class="subscribe-form">
-                        <div class="form-group">
-                            <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address">
-                            <input type="submit" value="Subscribe" class="form-control submit px-3">
-                        </div>
-                    </form>
-                </div>
-                <div class="ftco-footer-widget mb-5">
                     <h2 class="ftco-heading-2 mb-0">Connect With Us</h2>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
                         <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>

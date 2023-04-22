@@ -16,8 +16,7 @@ class ContactPostController extends Controller
     public function index()
     {
         $pochta=ContactPost::all();
-//        dd($pochta);
-        return view('adminaka.pochta');
+        return view('adminaka.pochta',compact('pochta'));
     }
 
     /**

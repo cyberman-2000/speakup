@@ -1,72 +1,129 @@
 @extends('layouts.admin_layout')
 @section('admin_content')
-    <div class="row page-titles mx-0">
-        <div class="col p-md-0">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Apps</a></li>
-                <li class="breadcrumb-item active"><a href="javascript:void(0)">Email</a></li>
-            </ol>
-        </div>
-    </div>
-    <!-- row -->
-
-    <div class="container-fluid">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset('adminaka/css/pochta.css')}}">
+    <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="email-left-box"><a href="email-compose.html" class="btn btn-primary btn-block">Compose</a>
-                            <div class="mail-list mt-4"><a href="email-inbox.html" class="list-group-item border-0 text-primary p-r-0"><i class="fa fa-inbox font-18 align-middle mr-2"></i> <b>Inbox</b> <span class="badge badge-primary badge-sm float-right m-t-5">198</span> </a>
-                                <a href="#" class="list-group-item border-0 p-r-0"><i class="fa fa-paper-plane font-18 align-middle mr-2"></i>Sent</a>  <a href="#" class="list-group-item border-0 p-r-0"><i class="fa fa-star-o font-18 align-middle mr-2"></i>Important <span class="badge badge-danger badge-sm float-right m-t-5">47</span> </a>
-                                <a href="#" class="list-group-item border-0 p-r-0"><i class="mdi mdi-file-document-box font-18 align-middle mr-2"></i>Draft</a><a href="#" class="list-group-item border-0 p-r-0"><i class="fa fa-trash font-18 align-middle mr-2"></i>Trash</a>
-                            </div>
-                            <h5 class="mt-5 m-b-10">Categories</h5>
-                            <div class="list-group mail-list"><a href="#" class="list-group-item border-0"><span class="fa fa-briefcase f-s-14 mr-2"></span>Work</a>  <a href="#" class="list-group-item border-0"><span class="fa fa-sellsy f-s-14 mr-2"></span>Private</a>  <a href="#"
-                                                                                                                                                                                                                                                                                 class="list-group-item border-0"><span class="fa fa-ticket f-s-14 mr-2"></span>Support</a>  <a href="#" class="list-group-item border-0"><span class="fa fa-tags f-s-14 mr-2"></span>Social</a>
+            <div class="col-md-12">
+                <div class="cart">
+                    <div class="cart-body bg-primary text-white mailbox-widget pb-0">
+                        <h2 class="text-white pb-3">Your Mailbox</h2>
+                        <ul class="nav nav-tabs custom-tab border-bottom-0 mt-4" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="inbox-tab" data-toggle="tab" aria-controls="inbox" href="#inbox" role="tab" aria-selected="true">
+                                    <span class="d-block d-md-none"><i class="ti-email"></i></span>
+                                    <span class="d-none d-md-block"> INBOX</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="sent-tab" data-toggle="tab" aria-controls="sent" href="#sent" role="tab" aria-selected="false">
+                                    <span class="d-block d-md-none"><i class="ti-export"></i></span>
+                                    <span class="d-none d-md-block">SENT</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="spam-tab" data-toggle="tab" aria-controls="spam" href="#spam" role="tab" aria-selected="false">
+                                    <span class="d-block d-md-none"><i class="ti-panel"></i></span>
+                                    <span class="d-none d-md-block">SPAM</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="delete-tab" data-toggle="tab" aria-controls="delete" href="#delete" role="tab" aria-selected="false">
+                                    <span class="d-block d-md-none"><i class="ti-trash"></i></span>
+                                    <span class="d-none d-md-block">DELETED</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade active show" id="inbox" aria-labelledby="inbox-tab" role="tabpanel">
+                            <div>
+                                <div class="row p-4 no-gutters align-items-center">
+                                    <div class="col-sm-12 col-md-6">
+                                        <h3 class="font-light mb-0"><i class="ti-email mr-2"></i>350 Unread emails</h3>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                        <ul class="list-inline dl mb-0 float-left float-md-right">
+                                            <li class="list-inline-item text-info mr-3">
+                                                <a href="#">
+                                                    <button class="btn btn-circle btn-success text-white" href="javascript:void(0)">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                    <span class="ml-2 font-normal text-dark">Compose</span>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item text-danger">
+                                                <a href="#">
+                                                    <button class="btn btn-circle btn-danger text-white" href="javascript:void(0)">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                    <span class="ml-2 font-normal text-dark">Delete</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Mail list-->
+                                <div class="table-responsive">
+                                    <table class="table email-table no-wrap table-hover v-middle mb-0 font-14">
+                                        <tbody>
+                                        <!-- row -->
+                                        @foreach($pochta as $value)
+                                        <tr>
+                                            <!-- star -->
+                                                <td><i class="fa fa-star text-warning"></i></td>
+                                                <td>
+                                                    <span class="mb-0 text-muted">{{$value->name}}</span>
+                                                </td>
+                                                <!-- Message -->
+                                                <td>
+                                                    <a class="link" href="javascript: void(0)">
+                                                        <span class="badge badge-pill text-white font-medium badge-danger mr-2">New</span>
+                                                        <span class="text-dark">{{$value->subject}}-</span>
+                                                    </a>
+                                                </td>
+                                                <!-- Attachment -->
+                                                <td><i class="fa fa-phone text-muted"> +998{{$value->phone_number}}</i></td>
+                                                <!-- Time -->
+                                                <td class="text-muted">{{$value->created_at}}</td>
+                                        </tr>
+                                        @endforeach
+                                        <!-- row -->
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                        <div class="email-right-box">
-                            <div role="toolbar" class="toolbar">
-                                <div class="btn-group">
-                                    <button aria-expanded="false" data-toggle="dropdown" class="btn btn-dark dropdown-toggle" type="button">More <span class="caret m-l-5"></span>
-                                    </button>
-                                    <div class="dropdown-menu"><span class="dropdown-header">More Option :</span>  <a href="javascript: void(0);" class="dropdown-item">Mark as Unread</a>  <a href="javascript: void(0);" class="dropdown-item">Add to Tasks</a>  <a href="javascript: void(0);"
-                                                                                                                                                                                                                                                                      class="dropdown-item">Add Star</a>  <a href="javascript: void(0);" class="dropdown-item">Mute</a>
-                                    </div>
+                        <div class="tab-pane fade" id="sent" aria-labelledby="sent-tab" role="tabpanel">
+                            <div class="row p-3 text-dark">
+                                <div class="col-md-6">
+                                    <h3 class="font-light">Lets check profile</h3>
+                                    <h4 class="font-light">you can use it with the small code</h4>
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a.</p>
                                 </div>
                             </div>
-                            <div class="email-list m-t-15">
-{{--------------------------------------Email qismlar Galadon yer---------------------------------------------}}
-
-                                <div class="message">
-                                    <a href="email-read.html">
-                                        <div class="col-mail col-mail-1">
-                                            <div class="email-checkbox">
-                                                <input type="checkbox" id="chk2">
-                                                <label class="toggle" for="chk2"></label>
-                                            </div><span class="star-toggle ti-star"></span>
-                                        </div>
-                                        <div class="col-mail col-mail-2">
-                                            <div class="subject">Ingredia Nutrisha, A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture</div>
-                                            <div class="date">11:49 am</div>
-                                        </div>
-                                    </a>
+                        </div>
+                        <div class="tab-pane fade" id="spam" aria-labelledby="spam-tab" role="tabpanel">
+                            <div class="row p-3 text-dark">
+                                <div class="col-md-6">
+                                    <h3 class="font-light">Come on you have a lot message</h3>
+                                    <h4 class="font-light">you can use it with the small code</h4>
                                 </div>
-
-                                {{--------------------------------------Email qismlar Galadon yerni oxir---------------------------------------------}}
+                                <div class="col-md-6 text-right">
+                                    <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a.</p>
+                                </div>
                             </div>
-                            <!-- panel -->
-                            <div class="row">
-                                <div class="col-7">
-                                    <div class="text-left">1 - 20 of 568</div>
+                        </div>
+                        <div class="tab-pane fade" id="delete" aria-labelledby="delete-tab" role="tabpanel">
+                            <div class="row p-3 text-dark">
+                                <div class="col-md-6">
+                                    <h3 class="font-light">Just do Settings</h3>
+                                    <h4 class="font-light">you can use it with the small code</h4>
                                 </div>
-                                <div class="col-5">
-                                    <div class="btn-group float-right">
-                                        <button class="btn btn-gradient" type="button"><i class="fa fa-angle-left"></i>
-                                        </button>
-                                        <button class="btn btn-dark" type="button"><i class="fa fa-angle-right"></i>
-                                        </button>
-                                    </div>
+                                <div class="col-md-6 text-right">
+                                    <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a.</p>
                                 </div>
                             </div>
                         </div>
