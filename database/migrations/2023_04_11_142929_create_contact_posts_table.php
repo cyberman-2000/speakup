@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('phone_number');
             $table->string('subject');
             $table->string('message');
+            $table->boolean('watched');
             $table->timestamps();
         });
     }

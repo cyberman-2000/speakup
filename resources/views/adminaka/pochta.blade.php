@@ -15,24 +15,6 @@
                                     <span class="d-none d-md-block"> INBOX</span>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="sent-tab" data-toggle="tab" aria-controls="sent" href="#sent" role="tab" aria-selected="false">
-                                    <span class="d-block d-md-none"><i class="ti-export"></i></span>
-                                    <span class="d-none d-md-block">SENT</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="spam-tab" data-toggle="tab" aria-controls="spam" href="#spam" role="tab" aria-selected="false">
-                                    <span class="d-block d-md-none"><i class="ti-panel"></i></span>
-                                    <span class="d-none d-md-block">SPAM</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="delete-tab" data-toggle="tab" aria-controls="delete" href="#delete" role="tab" aria-selected="false">
-                                    <span class="d-block d-md-none"><i class="ti-trash"></i></span>
-                                    <span class="d-none d-md-block">DELETED</span>
-                                </a>
-                            </li>
                         </ul>
                     </div>
                     <div class="tab-content" id="myTabContent">
@@ -77,10 +59,10 @@
                                                 </td>
                                                 <!-- Message -->
                                                 <td>
-                                                    <a class="link" href="javascript: void(0)">
-                                                        <span class="badge badge-pill text-white font-medium badge-danger mr-2">New</span>
+                                            <a class="link" href="{{$value->id}}">
+                                                       @if($value->watched == 0)  <span class="badge badge-pill text-white font-medium badge-danger mr-2">New</span>@endif
                                                         <span class="text-dark">{{$value->subject}}-</span>
-                                                    </a>
+                                            </a>
                                                 </td>
                                                 <!-- Attachment -->
                                                 <td><i class="fa fa-phone text-muted"> +998{{$value->phone_number}}</i></td>
@@ -91,39 +73,6 @@
                                         <!-- row -->
                                         </tbody>
                                     </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="sent" aria-labelledby="sent-tab" role="tabpanel">
-                            <div class="row p-3 text-dark">
-                                <div class="col-md-6">
-                                    <h3 class="font-light">Lets check profile</h3>
-                                    <h4 class="font-light">you can use it with the small code</h4>
-                                </div>
-                                <div class="col-md-6 text-right">
-                                    <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="spam" aria-labelledby="spam-tab" role="tabpanel">
-                            <div class="row p-3 text-dark">
-                                <div class="col-md-6">
-                                    <h3 class="font-light">Come on you have a lot message</h3>
-                                    <h4 class="font-light">you can use it with the small code</h4>
-                                </div>
-                                <div class="col-md-6 text-right">
-                                    <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="delete" aria-labelledby="delete-tab" role="tabpanel">
-                            <div class="row p-3 text-dark">
-                                <div class="col-md-6">
-                                    <h3 class="font-light">Just do Settings</h3>
-                                    <h4 class="font-light">you can use it with the small code</h4>
-                                </div>
-                                <div class="col-md-6 text-right">
-                                    <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a.</p>
                                 </div>
                             </div>
                         </div>

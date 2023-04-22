@@ -15,7 +15,7 @@ class ContactPostController extends Controller
      */
     public function index()
     {
-        $pochta=ContactPost::all();
+        $pochta=ContactPost::query()->orderBy('watched')->get();
         return view('adminaka.pochta',compact('pochta'));
     }
 

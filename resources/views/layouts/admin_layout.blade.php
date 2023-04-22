@@ -241,18 +241,11 @@
     <div class="nk-sidebar">
         <div class="nk-nav-scroll">
             <ul class="metismenu" id="menu">
-                <li class="nav-label">Dashboard</li>
-                <li class="nav-label">Apps</li>
                 <li>
-                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <a class="" href="{{route('pochta.index')}}" aria-expanded="false">
                         <i class="icon-envelope menu-icon"></i> <span class="nav-text">Email</span>
                     </a>
-                    <ul aria-expanded="false">
-                        <li><a href="{{route('pochta.index')}}">Pochta</a></li>
-                        <li><a href="./email-compose.html">Yo'zish</a></li>
-                    </ul>
                 </li>
-                <li class="nav-label">UI Components</li>
                 <li>
                     <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <i class="icon-grid menu-icon"></i><span class="nav-text">UI Components</span>
