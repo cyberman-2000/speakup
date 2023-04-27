@@ -15,7 +15,7 @@ class ContactPostController extends Controller
      */
     public function index()
     {
-        $pochta=ContactPost::query()->orderBy('watched')->get();
+        $pochta=ContactPost::query()->orderBy('created_at', 'desc')->get();
         return view('adminaka.pochta',compact('pochta'));
     }
 
@@ -48,9 +48,12 @@ class ContactPostController extends Controller
      * @param  \App\Models\ContactPost  $contactPost
      * @return \Illuminate\Http\Response
      */
-    public function show(ContactPost $contactPost)
+    public function show($id,ContactPost $contactPost)
     {
-        //
+        $email=ContactPost::query()->where('id','=',$id)->get();
+//        dd($email);
+        $update= ContactPost::query()->where('id', '=',$id)->update(['watched' => 1]);
+        return view('adminaka.content_pochta',compact(['email']));
     }
 
     /**

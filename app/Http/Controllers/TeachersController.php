@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TeachersRequest;
 use App\Models\Teachers;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class TeachersController extends Controller
      */
     public function index()
     {
-        //
+        $teachers= Teachers::all();
+        return view('adminaka.teachers_admin',compact('teachers'));
     }
 
     /**
@@ -33,9 +35,21 @@ class TeachersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TeachersRequest $request)
     {
-        //
+        $image = $request->file('image')->store('images/teachers');
+        $validated=$request->validated();
+//        dd($validated);
+        $create=Teachers::create([
+            'name'=>$validated['name'],
+            'last_name'=>$validated['last_name'],
+            'role'=>$validated['role'],
+            'scoreband'=>$validated['scoreband'],
+            'phone_number'=>$validated['phone_number'],
+            'about'=>$validated['about'],
+            'image'=>$image
+        ]);
+        return back()->with('success', 'Teacher has been created Successfully');
     }
 
     /**

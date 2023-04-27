@@ -59,7 +59,8 @@
                                                 </td>
                                                 <!-- Message -->
                                                 <td>
-                                            <a class="link" href="{{$value->id}}">
+                                                    <?php $id=$value->id;?>
+                                            <a class="link" href="{{route('pochta.show',$id)}}">
                                                        @if($value->watched == 0)  <span class="badge badge-pill text-white font-medium badge-danger mr-2">New</span>@endif
                                                         <span class="text-dark">{{$value->subject}}-</span>
                                             </a>

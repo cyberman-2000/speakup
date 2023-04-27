@@ -10,6 +10,6 @@ class ContactPost extends Model
     use HasFactory;
     public $table='contact_posts';
     protected $fillable=[
-        'name','subject','phone_number','message'
+        'name','subject','phone_number','message','created_at'
     ];
 }

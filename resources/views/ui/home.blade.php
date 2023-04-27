@@ -256,7 +256,7 @@
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="staff">
                         <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image: url({{asset("$value->image")}});"></div>
+                            <div class="img align-self-stretch" style="background-image: url({{asset("storage/$value->image")}});"></div>
                         </div>
                         <div class="text pt-3 text-center">
                             <h3>{{$value->name}} {{$value->last_name}}</h3>
