@@ -30,7 +30,7 @@ class TeachersRequest extends FormRequest
             'scoreband'=>'required| numeric',
             'phone_number'=>'required|max:999999999| min:110000000 | integer',
             'about'=>'required| max:1000|min:2',
-            'image'=>'required|image|max:819200'
+            'image'=>'sometimes|image|max:819200'
         ];
     }
 }

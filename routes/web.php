@@ -24,10 +24,11 @@ Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/pages/{page}',[HomeController::class,'home_pages'])->name('pages');
 //Route::get('/courses',[HomeController::class,'home_courses'])->name('home_courses');
 //Route::get('teachers',HomeController::class,'teachers');
-Route::prefix('/admin/adminaka')->group(function () {
-    Route::get('/',[AdminHomeController::class,'index'])->middleware(['auth', 'verified'])->name('admin_home');
+Route::prefix('/admin/adminaka')->middleware(['auth', 'verified'])->group(function () {
+    Route::get('/',[AdminHomeController::class,'index'])->name('admin_home');
     Route::resource('courses',CoursesController::class);
     Route::resource('pochta',ContactPostController::class);
+    Route::delete('/teachers/{id}', [TeachersController::class,'destroy'])->name('del_teach');
     Route::resource('teachers',TeachersController::class);
 });
 //Route::resource('courses',CoursesController::class);

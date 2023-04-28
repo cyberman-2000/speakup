@@ -10,15 +10,15 @@
         </div>
     @endif
 <div class="col-lg-12">
-    @if (\Session::has('success'))
-        <div class="alert alert-light">
-
-            {!! \Session::get('success') !!}
-
-        </div>
-    @endif
     <div class="card">
-        <div class="card-body">
+        <div class="card-body" >
+            @if (\Session::has('success'))
+                <div class="alert alert-success" role="alert">
+
+                    {!! \Session::get('success') !!}
+
+                </div>
+            @endif
             <h4 class="card-title">Bordered Table</h4>
             <div class="table-responsive">
                 <table class="table table-bordered verticle-middle">
@@ -45,7 +45,16 @@
                         <td><span class="label gradient-1 btn-rounded">{{$value->scoreband}}</span></td>
                         <td>{{$value->about}}</td>
                         <td><img src="{{asset("storage/$value->image")}}" class="rounded-circle" width="50px" alt=""></td>
-                        <td><span><a href="{{route('teachers.edit',$id)}}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="{{route('teachers.destroy',$id)}}" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close color-danger"></i></a></span></td>
+                        <td>
+                              <span><a class="btn btn-dark btn-sm" href="{{route('teachers.edit',$id)}}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a>
+                                <form class="delete" action="{{ route('teachers.destroy',$id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this teacher  {{$value->name}}!! ? ');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash color-muted m-r-5"></i></button>
+                                </form>
+                            </span>
+                        </td>
+
                     </tr>
                     @endforeach
                     </tbody>

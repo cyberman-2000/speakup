@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{asset('adminaka/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.cs')}}s">
     <!-- Custom Stylesheet -->
     <link href="{{asset('adminaka/css/style.css')}}" rel="stylesheet">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-confirmation/1.0.5/bootstrap-confirmation.min.js"></script>
 </head>
 
 <body>
@@ -205,19 +205,6 @@
                             <div class="dropdown-content-body">
                                 <ul>
                                     <li>
-                                        <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void()">
-                                            <i class="icon-envelope-open"></i> <span>Inbox</span> <div class="badge gradient-3 badge-pill gradient-1">3</div>
-                                        </a>
-                                    </li>
-
-                                    <hr class="my-2">
-                                    <li>
-                                        <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
-                                    </li>
-                                    <li>
                                         <form action="{{route('logout')}}" method="post">
                                             @csrf
                                             <button type="submit" class="btn btn-outline-danger"><i class="icon-key"></i> <span>Logout</span></button>
@@ -248,7 +235,7 @@
                 </li>
                 <li>
                     <a class="" href="{{route('teachers.index')}}" aria-expanded="false">
-                        <i class="icon-grid menu-icon"></i><span class="nav-text">Teachers</span>
+                        <i class="icon-user menu-icon"></i><span class="nav-text">Teachers</span>
                     </a>
                 </li>
             </ul>
@@ -283,7 +270,6 @@
     <!--**********************************
         Footer end
     ***********************************-->
-</div>
 <!--**********************************
     Main wrapper end
 ***********************************-->

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\TeachersRequest;
 use App\Models\Teachers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class TeachersController extends Controller
 {
@@ -69,9 +70,11 @@ class TeachersController extends Controller
      * @param  \App\Models\Teachers  $teachers
      * @return \Illuminate\Http\Response
      */
-    public function edit(Teachers $teachers)
+    public function edit(Teachers $teachers,$id)
     {
-        //
+        $teacher=Teachers::query()->find($id);
+
+        return view('adminaka.edit_teacher',compact(['teacher','id']));
     }
 
     /**
@@ -81,9 +84,25 @@ class TeachersController extends Controller
      * @param  \App\Models\Teachers  $teachers
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Teachers $teachers)
+    public function update(TeachersRequest $request, Teachers $teachers,$id)
     {
-        //
+        $validated=$request->validated();
+        if (!empty($request->file())){
+            $t_i=Teachers::find($id);
+            $file_delete='storage/'.$t_i->image;
+            $delete_file=File::delete($file_delete);
+            $image = $request->file('image')->store('images/teachers');
+            $teacher = Teachers::where('id',$id)->update(['image'=>$image]);
+        }
+        $teacher = Teachers::where('id',$id)->update([
+            'name'=>$validated['name'],
+            'last_name'=>$validated['last_name'],
+            'role'=>$validated['role'],
+            'scoreband'=>$validated['scoreband'],
+            'phone_number'=>$validated['phone_number'],
+            'about'=>$validated['about'],
+        ]);
+        return redirect()->route('teachers.index')->with('success', 'Teacher has been updated Successfully');
     }
 
     /**
@@ -92,8 +111,13 @@ class TeachersController extends Controller
      * @param  \App\Models\Teachers  $teachers
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Teachers $teachers)
+    public function destroy(Teachers $teachers,$id)
     {
-        //
+//        dd($id);
+        $t_i=Teachers::find($id);
+        $file_delete='storage/'.$t_i->image;
+        $delete_file=File::delete($file_delete);
+        $delete=Teachers::destroy($id);
+        return back()->with('success', 'Teacher has been deleted Successfully');
     }
 }
