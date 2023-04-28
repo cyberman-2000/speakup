@@ -15,8 +15,14 @@ class ContactPostController extends Controller
      */
     public function index()
     {
+        $count=0;
         $pochta=ContactPost::query()->orderBy('created_at', 'desc')->get();
-        return view('adminaka.pochta',compact('pochta'));
+        foreach ($pochta as $item){
+            if ($item->watched==0){
+                $count++;
+            }
+        }
+        return view('adminaka.pochta',compact(['pochta','count']));
     }
 
     /**
@@ -85,8 +91,20 @@ class ContactPostController extends Controller
      * @param  \App\Models\ContactPost  $contactPost
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ContactPost $contactPost)
+    public function destroy(ContactPost $contactPost,Request $request)
     {
-        //
+        $data=ContactPost::all();
+//        if ();
+
+//        dd($request->all());
+        $data = [];
+        foreach ($request->all() as $item){
+            if (is_numeric($item)){
+            $data[] = $item;
+            }
+        }
+//        dd($data);
+        $delete=ContactPost::whereIN('id',$data)->delete();
+        return back()->with('success', 'Emails has been deleted Successfully');
     }
 }

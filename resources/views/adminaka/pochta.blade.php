@@ -2,6 +2,13 @@
 @section('admin_content')
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('adminaka/css/pochta.css')}}">
+    @if (\Session::has('success'))
+        <div class="alert alert-success" role="alert">
+
+            {!! \Session::get('success') !!}
+
+        </div>
+    @endif
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -22,46 +29,27 @@
                             <div>
                                 <div class="row p-4 no-gutters align-items-center">
                                     <div class="col-sm-12 col-md-6">
-                                        <h3 class="font-light mb-0"><i class="ti-email mr-2"></i>350 Unread emails</h3>
-                                    </div>
-                                    <div class="col-sm-12 col-md-6">
-                                        <ul class="list-inline dl mb-0 float-left float-md-right">
-                                            <li class="list-inline-item text-info mr-3">
-                                                <a href="#">
-                                                    <button class="btn btn-circle btn-success text-white" href="javascript:void(0)">
-                                                        <i class="fa fa-plus"></i>
-                                                    </button>
-                                                    <span class="ml-2 font-normal text-dark">Compose</span>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item text-danger">
-                                                <a href="#">
-                                                    <button class="btn btn-circle btn-danger text-white" href="javascript:void(0)">
-                                                        <i class="fa fa-trash"></i>
-                                                    </button>
-                                                    <span class="ml-2 font-normal text-dark">Delete</span>
-                                                </a>
-                                            </li>
-                                        </ul>
+                                        <h3 class="font-light mb-0"><i class="ti-email mr-2"></i>{{$count}} Unread emails</h3>
                                     </div>
                                 </div>
                                 <!-- Mail list-->
                                 <div class="table-responsive">
+                                    <form action="{{route('pochta.destroy',$count)}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
                                     <table class="table email-table no-wrap table-hover v-middle mb-0 font-14">
                                         <tbody>
-                                        <!-- row -->
                                         @foreach($pochta as $value)
                                         <tr>
-                                            <!-- star -->
+                                                <td><input type="checkbox" name="id{{$value->id}}" value="{{$value->id}}" id="chk2"></td>
                                                 <td><i class="fa fa-star text-warning"></i></td>
                                                 <td>
                                                     <span class="mb-0 text-muted">{{$value->name}}</span>
                                                 </td>
-                                                <!-- Message -->
                                                 <td>
                                                     <?php $id=$value->id;?>
                                             <a class="link" href="{{route('pochta.show',$id)}}">
-                                                       @if($value->watched == 0)  <span class="badge badge-pill text-white font-medium badge-danger mr-2">New</span>@endif
+                                                       @if($value->watched == 0)  <span class="badge badge-sm badge-pill text-white badge-danger mr-2">New</span>@endif
                                                         <span class="text-dark">{{$value->subject}}-</span>
                                             </a>
                                                 </td>
@@ -74,6 +62,16 @@
                                         <!-- row -->
                                         </tbody>
                                     </table>
+                                    <div class="col-sm-12 col-md-6 d-flex">
+                                        <ul class="list-inline dl mb-0 float-left float-md-right">
+                                            <li class="list-inline-item text-danger">
+                                                    <button type="submit" class="btn btn-circle btn-danger text-white" href="javascript:void(0)">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
