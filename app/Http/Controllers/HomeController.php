@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        $courses=Courses::all();
+        $courses=Courses::query()->orderBy('id')->limit(4)->get();
         $teachers=Teachers::query()->orderBy('id')->limit(4)->get();
         $news=News::all();
         return view('ui.home',compact(['courses','teachers','news']));

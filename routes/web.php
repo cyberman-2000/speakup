@@ -30,6 +30,7 @@ Route::prefix('/admin/adminaka')->middleware(['auth', 'verified'])->group(functi
     Route::resource('pochta',ContactPostController::class);
     Route::delete('/teachers/{id}', [TeachersController::class,'destroy'])->name('del_teach');
     Route::resource('teachers',TeachersController::class);
+    Route::resource('courses',CoursesController::class);
 });
 //Route::resource('courses',CoursesController::class);
 

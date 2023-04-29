@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('count_students')->default('10');
             $table->string('duration');
             $table->string('about');
-            $table->date('when');
+            $table->string('when');
             $table->integer('cost')->default('350000');
             $table->string('image');
             $table->timestamps();

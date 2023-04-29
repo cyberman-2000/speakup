@@ -73,7 +73,6 @@ class TeachersController extends Controller
     public function edit(Teachers $teachers,$id)
     {
         $teacher=Teachers::query()->find($id);
-
         return view('adminaka.edit_teacher',compact(['teacher','id']));
     }
 
@@ -90,7 +89,10 @@ class TeachersController extends Controller
         if (!empty($request->file())){
             $t_i=Teachers::find($id);
             $file_delete='storage/'.$t_i->image;
-            $delete_file=File::delete($file_delete);
+            if (file_exists($file_delete)){
+                $delete_file=File::delete($file_delete);
+            }
+
             $image = $request->file('image')->store('images/teachers');
             $teacher = Teachers::where('id',$id)->update(['image'=>$image]);
         }
@@ -116,7 +118,9 @@ class TeachersController extends Controller
 //        dd($id);
         $t_i=Teachers::find($id);
         $file_delete='storage/'.$t_i->image;
-        $delete_file=File::delete($file_delete);
+        if (file_exists($file_delete)){
+            $delete_file=File::delete($file_delete);
+        }
         $delete=Teachers::destroy($id);
         return back()->with('success', 'Teacher has been deleted Successfully');
     }
