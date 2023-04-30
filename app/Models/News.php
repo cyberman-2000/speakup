@@ -18,4 +18,6 @@ class News extends Model
         return $formatter->format(new DateTime($this->when));
 //        return Carbon::parse($this->when)->diffForHumans();
     }
+    protected $table='news';
+    protected $guarded=[''];
 }

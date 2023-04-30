@@ -11,7 +11,7 @@
     @endif
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Edit Teacher</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Edit Course</h5>
         </div>
         <div class="modal-body">
             <form action="{{route('courses.update',$id)}}" method="post" enctype="multipart/form-data">

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NewsRequest;
 use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class NewsController extends Controller
 {
@@ -14,7 +16,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //
+        $news=News::all();
+        return view('adminaka.news_admin',compact('news'));
     }
 
     /**
@@ -33,9 +36,18 @@ class NewsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NewsRequest $request)
     {
-        //
+        $image = $request->file('image')->store('images/news');
+        $validated=$request->validated();
+        $create=News::create([
+            'event_name'=>$validated['event_name'],
+            'mini_title'=>$validated['mini_title'],
+            'full_information'=>$validated['full_information'],
+            'when'=>$validated['when'],
+            'image'=>$image,
+        ]);
+        return back()->with('success', 'News has been created Successfully');
     }
 
     /**
@@ -55,9 +67,11 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function edit(News $news)
+    public function edit(News $news, $id)
     {
-        //
+        dd($id);
+        $new=News::find($id);
+        return view('adminaka.edit_news',compact(['new','id']));
     }
 
     /**
@@ -67,9 +81,25 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update(NewsRequest $request, News $news,$id)
     {
-        //
+        $validated=$request->validated();
+        if (!empty($request->file())){
+            $t_i=News::find($id);
+            $file_delete='storage/'.$t_i->image;
+            if (file_exists($file_delete)){
+                $delete_file=File::delete($file_delete);
+            }
+            $image = $request->file('image')->store('images/news');
+            $teacher = News::where('id',$id)->update(['image'=>$image]);
+        }
+        $teacher = News::where('id',$id)->update([
+            'event_name'=>$validated['event_name'],
+            'mini_title'=>$validated['mini_title'],
+            'full_information'=>$validated['full_information'],
+            'when'=>$validated['when'],
+        ]);
+        return redirect()->route('news.index')->with('success', 'News has been updated Successfully');
     }
 
     /**
@@ -78,8 +108,14 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function destroy(News $news)
+    public function destroy(News $news,$id)
     {
-        //
+        $t_i=News::find($id);
+        $file_delete='storage/'.$t_i->image;
+        if (file_exists($file_delete)){
+            $delete_file=File::delete($file_delete);
+        }
+        $delete=News::destroy($id);
+        return back()->with('success', 'News has been deleted Successfully');
     }
 }

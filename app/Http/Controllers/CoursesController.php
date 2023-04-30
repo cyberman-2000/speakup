@@ -71,7 +71,7 @@ class CoursesController extends Controller
      * @param  \App\Models\Courses  $courses
      * @return \Illuminate\Http\Response
      */
-    public function edit(Courses $courses,$id)
+    public function edit(Courses $courses, $id)
     {
         $course=Courses::find($id);
         return view('adminaka.edit_course',compact(['course','id']));

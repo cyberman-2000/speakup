@@ -253,6 +253,11 @@
                         <i class="icon-badge menu-icon"></i><span class="nav-text">Courses</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('news.index')}}" aria-expanded="false">
+                        <i class="mdi mdi-bullhorn menu-icon"></i><span class="nav-text">News List</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
