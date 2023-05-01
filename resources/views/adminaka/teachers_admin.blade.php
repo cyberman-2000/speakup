@@ -19,7 +19,7 @@
 
                 </div>
             @endif
-            <h4 class="card-title">Bordered Table</h4>
+            <h4 class="card-title">Teachers Table</h4>
             <div class="table-responsive">
                 <table class="table table-bordered verticle-middle">
                     <thead>
@@ -47,6 +47,7 @@
                         <td><img src="{{asset("storage/$value->image")}}" class="rounded-circle" width="50px" alt=""></td>
                         <td>
                               <span><a class="btn btn-dark btn-sm" href="{{route('teachers.edit',$id)}}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a>
+                                  <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-globe color-muted m-r-5"></i></button>
                                 <form class="delete" action="{{ route('teachers.destroy',$id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this teacher  {{$value->name}}!! ? ');">
                                     @csrf
                                     @method('DELETE')
@@ -56,6 +57,46 @@
                         </td>
 
                     </tr>
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Social media</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <form action="{{route('social.destroy',$value->id)}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                        <div class="modal-body">
+                                                <div class="select mb-2">
+                                                    <input type="hidden" name="id" value="">
+                                                        <select required name="social">
+                                                            <option value="telegram">Telegram</option>
+                                                            <option value="instagram">Instagram</option>
+                                                            <option value="facebook">Facebook</option>
+                                                            <option value="twitter">Twitter</option>
+                                                            <option value="youtube">Youtube</option>
+                                                            <option value="gmail">Gmail</option>
+                                                        </select>
+                                                </div>
+                                                <div class="d-flex flex-column">
+                                                    <label for="url" class="url">URL Media:</label>
+                                                    <input type="text" required name="url" id="url">
+                                                </div>
+
+
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                     @endforeach
                     </tbody>
                 </table>

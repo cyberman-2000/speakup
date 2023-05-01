@@ -25,6 +25,7 @@
     <!-- Daterange picker plugins css -->
     <link href="{{asset('adminaka/plugins/timepicker/bootstrap-timepicker.min.css')}}" rel="stylesheet">
     <link href="{{asset('adminaka/plugins/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('adminaka/css/select.css')}}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-confirmation/1.0.5/bootstrap-confirmation.min.js"></script>
 </head>
 
@@ -59,7 +60,7 @@
                 <b class="logo-abbr"><img src="{{asset('adminaka/images/LogoSpeakUpDD.png')}}" alt=""> </b>
                 <span class="logo-compact"><img src="{{asset('adminaka/images/LogoSpeakUpDD.png')}}" alt=""></span>
                 <span class="brand-title">
-                        <img class="pb-2" src="{{asset('adminaka/images/LogoSpeakUpWD.png')}}" width="180x" height="50px" alt="">
+                        <img class="pb-2" src="{{asset('adminaka/images/LogoSpeakUpWD.png')}}" width="150px" height="50px" alt="">
                     </span>
             </a>
         </div>
@@ -256,6 +257,11 @@
                 <li>
                     <a href="{{route('news.index')}}" aria-expanded="false">
                         <i class="mdi mdi-bullhorn menu-icon"></i><span class="nav-text">News List</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('social.index')}}" aria-expanded="false">
+                        <i class="fa fa-globe color-muted m-r-5"></i><span class="nav-text">Social Media</span>
                     </a>
                 </li>
             </ul>

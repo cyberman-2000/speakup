@@ -264,10 +264,9 @@
                             <div class="faded">
                                 <p>{{$value->about}}</p>
                                 <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#"><span class="icon-telegram"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                                    @foreach($value->media as $item)
+                                        <li class="ftco-animate"><a href="{{$item->media_url}}"><span class="icon-{{$item->media_name}}"></span></a></li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -344,16 +343,17 @@
             <div class="row">
                 @foreach($news as $value)
                     <?php
-//                        dd($value->when);
-                        $ts= strtotime($value->when);
-                        $day= date('d', $ts);
-                        $month=date('M', $ts);
-                        $year=date('Y', $ts);
-                        $time= date('H:i', $ts);
+                        $dat=explode(" ",$value->when);
+                        $week_day=$dat['0'];
+                        $day=$dat['1'];
+//                        dd($day);
+                        $month=$dat['2'];
+                        $year=$dat['3'];
+                        $time= $dat['5'];
                         ?>
                 <div class="col-md-6 col-lg-4 ftco-animate">
                     <div class="blog-entry">
-                        <a href="blog-single.html" class="block-20 d-flex align-items-end" style="background-image: url('{{asset("$value->image")}}');">
+                        <a href="blog-single.html" class="block-20 d-flex align-items-end" style="background-image: url('{{asset("storage/$value->image")}}');">
                             <div class="meta-date text-center p-2">
                                 <span class="day">{{$day}}</span>
                                 <span class="mos">{{$month}}</span>

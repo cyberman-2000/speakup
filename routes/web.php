@@ -6,6 +6,7 @@ use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\SocialMediaController;
 use App\Http\Controllers\TeachersController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,7 @@ Route::prefix('/admin/adminaka')->middleware(['auth', 'verified'])->group(functi
     Route::resource('teachers',TeachersController::class);
     Route::resource('courses',CoursesController::class);
     Route::resource('news',NewsController::class);
+    Route::resource('social',SocialMediaController::class);
 });
 //Route::resource('courses',CoursesController::class);
 

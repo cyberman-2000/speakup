@@ -44,7 +44,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($news as $value)
+                        @foreach($new as $value)
                                 <?php $id=$value->id;?>
                             <tr>
                                 <td>{{$value->id}}</td>
@@ -54,8 +54,8 @@
                                 <td>{{$value->when}}</td>
                                 <td><img src="{{asset("storage/$value->image")}}" width="50px" alt=""></td>
                                 <td>
-                              <span><a class="btn btn-dark btn-sm" href="{{route('news.edit',$id)}}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a>
-                                <form class="delete" action="{{ route('news.destroy',$id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this teacher  {{$value->event_name}}!! ? ');">
+                              <span><a class="btn btn-dark btn-sm" href="{{route('news.edit', $id)}}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a>
+                                <form class="delete" action="{{ route('news.destroy', $id)}}" method="POST" onsubmit="return confirm('Are you sure you want to delete this teacher  {{$value->event_name}}!! ? ');">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash color-muted m-r-5"></i></button>

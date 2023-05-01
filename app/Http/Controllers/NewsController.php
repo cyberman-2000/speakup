@@ -16,8 +16,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news=News::all();
-        return view('adminaka.news_admin',compact('news'));
+        $new=News::all();
+        return view('adminaka.news_admin',compact('new'));
     }
 
     /**
@@ -67,9 +67,9 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function edit(News $news, $id)
+    public function edit($id)
     {
-        dd($id);
+//        dd($id);
         $new=News::find($id);
         return view('adminaka.edit_news',compact(['new','id']));
     }
@@ -81,7 +81,7 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(NewsRequest $request, News $news,$id)
+    public function update(NewsRequest $request,$id)
     {
         $validated=$request->validated();
         if (!empty($request->file())){
@@ -108,7 +108,7 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function destroy(News $news,$id)
+    public function destroy($id)
     {
         $t_i=News::find($id);
         $file_delete='storage/'.$t_i->image;

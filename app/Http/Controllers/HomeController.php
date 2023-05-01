@@ -11,7 +11,8 @@ class HomeController extends Controller
 {
     public function index(){
         $courses=Courses::query()->orderBy('id')->limit(4)->get();
-        $teachers=Teachers::query()->orderBy('id')->limit(4)->get();
+        $teachers=Teachers::query()->with('media')->orderBy('id')->limit(4)->get();
+//        dd($teachers);
         $news=News::all();
         return view('ui.home',compact(['courses','teachers','news']));
     }

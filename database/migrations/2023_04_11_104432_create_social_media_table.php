@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('media_name');
             $table->string('media_url');
+            $table->integer('teacher_id');
             $table->timestamps();
         });
     }
