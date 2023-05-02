@@ -70,7 +70,7 @@ class NewsController extends Controller
     public function edit($id)
     {
 //        dd($id);
-        $new=News::find($id);
+        $new=News::find($id)->with('teacher');
         return view('adminaka.edit_news',compact(['new','id']));
     }
 

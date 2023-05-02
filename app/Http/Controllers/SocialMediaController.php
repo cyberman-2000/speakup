@@ -70,7 +70,9 @@ class SocialMediaController extends Controller
      */
     public function edit(Request $request,$id)
     {
-        dd($id);
+        $social=socialMedia::query()->with('teacher')->find($id);
+        $teach=Teachers::all();
+        return view('adminaka.edit_social',compact(['social','teach','id']));
     }
 
     /**
@@ -82,7 +84,15 @@ class SocialMediaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($id);
+        $validated = $request->validate([
+            'url' => 'required| url| max:150',
+        ]);
+        $update=socialMedia::where('id',$id)->update([
+            'media_name'=>$request->media_name,
+            'media_url'=>$request->url,
+            'teacher_id'=>$request->teacher_id,
+        ]);
+        return redirect()->route('social.index')->with('success', 'Social has been updated Successfully');
     }
 
     /**
@@ -93,6 +103,7 @@ class SocialMediaController extends Controller
      */
     public function destroy(Request $request,$id)
     {
-        dd($id);
+        $destroy=socialMedia::destroy($id);
+        return back()->with('success', 'Social Media has been deleted Successfully');
     }
 }
