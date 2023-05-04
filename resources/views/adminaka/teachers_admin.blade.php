@@ -47,7 +47,6 @@
                         <td><img src="{{asset("storage/$value->image")}}" class="rounded-circle" width="50px" alt=""></td>
                         <td>
                               <span><a class="btn btn-dark btn-sm" href="{{route('teachers.edit',$id)}}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i> </a>
-                                  <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-globe color-muted m-r-5"></i></button>
                                 <form class="delete" action="{{ route('teachers.destroy',$id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this teacher  {{$value->name}}!! ? ');">
                                     @csrf
                                     @method('DELETE')
@@ -100,6 +99,10 @@
                     @endforeach
                     </tbody>
                 </table>
+                <div class="col-md-12">
+
+                    {{$teachers->links('vendor.pagination.bootstrap-4')}}
+                </div>
 {{--                <a href="{{route('teachers.create')}}" class="btn btn-success">ADD</a>--}}
                 <div class="bootstrap-modal">
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">+ ADD TEACHER</button>

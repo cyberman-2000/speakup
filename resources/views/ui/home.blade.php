@@ -366,7 +366,7 @@
                             <h3 class="heading"><a href="#">{{$value->event_name}}</a></h3>
                             <p>{{$value->mini_title}}</p>
                             <div class="d-flex align-items-center mt-4">
-                                <p class="mb-0"><a href="#" class="btn btn-primary btn-read">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                                <p class="mb-0"><a href="{{route('pages',['page'=>'news'])}}" class="btn btn-primary btn-read">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
                                 <p class="ml-auto mb-0">
                                     <a href="#" class="mr-2">Admin</a>
                                     <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
@@ -376,6 +376,7 @@
                     </div>
                 </div>
                 @endforeach
+                    <div class="col-md-12">{{$news->links('vendor.pagination.bootstrap-4')}}</div>
             </div>
         </div>
     </section>

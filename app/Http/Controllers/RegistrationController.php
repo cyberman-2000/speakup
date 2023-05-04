@@ -15,7 +15,14 @@ class RegistrationController extends Controller
      */
     public function index()
     {
-
+        $count=0;
+        $reg=Registration::query()->orderBy('created_at', 'desc')->paginate('10');
+        foreach ($reg as $item){
+            if ($item->watched==0){
+                $count++;
+            }
+        }
+        return view('adminaka.registration_admin',compact(['reg','count']));
     }
 
     /**
@@ -82,8 +89,15 @@ class RegistrationController extends Controller
      * @param  \App\Models\Registration  $registration
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Registration $registration)
+    public function destroy(Registration $registration,Request $request)
     {
-        //
+        $data = [];
+        foreach ($request->all() as $item){
+            if (is_numeric($item)){
+                $data[] = $item;
+            }
+        }
+        $delete=Registration::whereIN('id',$data)->delete();
+        return back()->with('success', 'Registered user/\'s has been deleted Successfully');
     }
 }

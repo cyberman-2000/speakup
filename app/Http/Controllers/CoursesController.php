@@ -16,7 +16,7 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        $courses=Courses::all();
+        $courses=Courses::query()->paginate('10');
         return view('adminaka.courses_admin',compact('courses'));
     }
 

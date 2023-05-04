@@ -62,6 +62,10 @@
                                         <!-- row -->
                                         </tbody>
                                     </table>
+                                        <div class="col-md-12">
+
+                                            {{$pochta->links('vendor.pagination.bootstrap-4')}}
+                                        </div>
                                     <div class="col-sm-12 col-md-6 d-flex">
                                         <ul class="list-inline dl mb-0 float-left float-md-right">
                                             <li class="list-inline-item text-danger">

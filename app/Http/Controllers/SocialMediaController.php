@@ -15,7 +15,7 @@ class SocialMediaController extends Controller
      */
     public function index()
     {
-        $social=SocialMedia::with('teacher')->get();
+        $social=SocialMedia::with('teacher')->paginate('5');
         $teach=Teachers::all();
 //        dd($social);
         return view('adminaka.teachers_social',compact(['social','teach']));

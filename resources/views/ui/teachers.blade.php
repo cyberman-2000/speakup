@@ -34,17 +34,16 @@
                                 <div class="faded">
                                     <p>{{$value->about}}</p>
                                     <ul class="ftco-social text-center">
-                                        <li class="ftco-animate"><a href="#"><span class="icon-telegram"></span></a></li>
-                                        <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                                        <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-                                        <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                                        @foreach($value->media as $item)
+                                            <li class="ftco-animate"><a href="{{$item->media_url}}"><span class="icon-{{$item->media_name}}"></span></a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 @endforeach
-
+                    <div class="col-md-12">{{$teachers->links('vendor.pagination.bootstrap-4')}}</div>
             </div>
         </div>
     </section>

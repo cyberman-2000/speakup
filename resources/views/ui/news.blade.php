@@ -23,15 +23,17 @@
             <div class="row">
                 @foreach($news as $value)
                         <?php
-                        $ts= strtotime($value->when);
-                        $day= date('d', $ts);
-                        $month=date('M', $ts);
-                        $year=date('Y', $ts);
-                        $time= date('H:i', $ts);
+                        $dat=explode(" ",$value->when);
+                        $week_day=$dat['0'];
+                        $day=$dat['1'];
+//                        dd($day);
+                        $month=$dat['2'];
+                        $year=$dat['3'];
+                        $time= $dat['5'];
                         ?>
                     <div class="col-md-6 col-lg-4 ftco-animate">
                         <div class="blog-entry">
-                            <a href="blog-single.html" class="block-20 d-flex align-items-end" style="background-image: url('{{asset("$value->image")}}');">
+                            <a href="blog-single.html" class="block-20 d-flex align-items-end" style="background-image: url('{{asset("storage/$value->image")}}');">
                                 <div class="meta-date text-center p-2">
                                     <span class="day">{{$day}}</span>
                                     <span class="mos">{{$month}}</span>
@@ -54,6 +56,7 @@
                         </div>
                     </div>
                 @endforeach
+                    <div class="col-md-12">{{$news->links('vendor.pagination.bootstrap-4')}}</div>
             </div>
         </div>
     </section>

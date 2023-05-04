@@ -16,7 +16,7 @@ class TeachersController extends Controller
      */
     public function index()
     {
-        $teachers= Teachers::all();
+        $teachers= Teachers::query()->paginate('5');
         return view('adminaka.teachers_admin',compact('teachers'));
     }
 

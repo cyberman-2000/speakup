@@ -264,6 +264,11 @@
                         <i class="fa fa-globe color-muted m-r-5"></i><span class="nav-text">Social Media</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('registration.index')}}" aria-expanded="false">
+                        <i class="fa fa-user-plus color-muted m-r-5"></i><span class="nav-text">Registered in the course</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

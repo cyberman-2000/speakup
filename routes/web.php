@@ -35,6 +35,7 @@ Route::prefix('/admin/adminaka')->middleware(['auth', 'verified'])->group(functi
     Route::resource('courses',CoursesController::class);
     Route::resource('news',NewsController::class);
     Route::resource('social',SocialMediaController::class);
+    Route::resource('registration',RegistrationController::class);
 });
 //Route::resource('courses',CoursesController::class);
 

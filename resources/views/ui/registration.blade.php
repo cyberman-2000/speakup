@@ -2,7 +2,7 @@
 @section('content_bar')
     <section class="hero-wrap hero-wrap-2" style="background-image: url('{{asset('assets/images/bg_1.jpg')}}');">
         @if (\Session::has('success'))
-            <div class="alert alert-light">
+            <div class="alert alert-success" role="alert">
 
                 {!! \Session::get('success') !!}
 

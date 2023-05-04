@@ -67,6 +67,10 @@
                         @endforeach
                         </tbody>
                     </table>
+                    <div class="col-md-12">
+
+                        {{$new->links('vendor.pagination.bootstrap-4')}}
+                    </div>
                     {{--                <a href="{{route('teachers.create')}}" class="btn btn-success">ADD</a>--}}
                     <div class="bootstrap-modal">
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">+ ADD TEACHER</button>

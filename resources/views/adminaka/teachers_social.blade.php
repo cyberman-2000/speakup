@@ -55,6 +55,7 @@
                         @endforeach
                         </tbody>
                     </table>
+                    <div class="col-md-12">{{$social->links('vendor.pagination.bootstrap-4')}}</div>
                     <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModalCenter"><span style="font-size: 14px; font-weight: bold">+ADD Social Media</span> <i style="font-size: 15px; font-weight: bold" class="fa fa-globe color-muted m-r-5"></i></button>
                     {{--                <a href="{{route('teachers.create')}}" class="btn btn-success">ADD</a>--}}
                     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
