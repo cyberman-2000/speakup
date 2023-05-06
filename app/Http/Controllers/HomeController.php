@@ -13,7 +13,7 @@ class HomeController extends Controller
         $courses=Courses::query()->orderBy('id')->limit(4)->get();
         $teachers=Teachers::query()->with('media')->orderBy('id')->limit(4)->get();
 //        dd($teachers);
-        $news=News::query()->orderBy('id')->paginate('4');
+        $news=News::query()->orderBy('id')->paginate('3');
         return view('ui.home',compact(['courses','teachers','news']));
     }
     public function home_pages($page){

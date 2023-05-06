@@ -38,7 +38,7 @@ class NewsController extends Controller
      */
     public function store(NewsRequest $request)
     {
-        $image = $request->file('image')->store('images/news');
+        $image = $request->file('image')->store('images/news/');
         $validated=$request->validated();
         $create=News::create([
             'event_name'=>$validated['event_name'],

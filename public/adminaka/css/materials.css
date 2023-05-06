@@ -1,0 +1,78 @@
+.bg-light {
+    background-color: #FAFAFA;
+    color: #666;
+}
+
+.br-light {
+    border-color: #e7e7e7 !important;
+}
+
+.br-a {
+    border: 1px solid #eeeeee !important;
+}
+
+.ph30 {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}
+
+.ph60 {
+    padding: 60px !important;
+}
+
+.pv20 {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+
+.bg-light.dark {
+    background-color: #F2F2F2;
+}
+
+.micro-header {
+    color: #999;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+h4, .h4 {
+    font-size: 15px;
+}
+
+.holder-style.holder-active {
+    background-color: #FFF;
+    border:2px dashed #70ca63;
+}
+
+.mb20 {
+    margin-bottom: 20px !important;
+}
+
+.p15 {
+    padding: 15px !important;
+}
+
+.holder-style {
+    display: block;
+    padding: 9px 16px;
+    color: #AAA;
+    background-color: #f1f1f1;
+    border: 2px dashed #d9d9d9;
+    -webkit-transition: all 0.15s ease;
+    -moz-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+}
+
+.holder-style.holder-active .holder-icon {
+    color: #70ca63;
+}
+
+.holder-style .holder-icon {
+    color: #AAA;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+a, a:hover, a:focus{
+    text-decoration:none !important;
+}

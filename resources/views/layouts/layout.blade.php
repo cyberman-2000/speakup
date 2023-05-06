@@ -78,6 +78,7 @@
                 <li class="nav-item"><a href="{{route('pages',['page'=>'news'])}}" class="nav-link">News</a></li>
                 <li class="nav-item"><a href="{{route('pages',['page'=>'contact'])}}" class="nav-link">Contact</a></li>
                 <li class="nav-item"><a href="{{route('pages',['page'=>'registration'])}}" class="nav-link">Registration</a></li>
+                <li class="nav-item"><a href="{{route('pages',['page'=>'materials'])}}" class="nav-link">Materials</a></li>
             </ul>
         </div>
     </div>
@@ -143,7 +144,7 @@
                         <li><a href="{{route('pages',['page'=>'news'])}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Blog</a></li>
                         <li><a href="{{route('pages',['page'=>'contact'])}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
                         <li><a href="{{route('pages',['page'=>'registration'])}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Registration</a></li>
-                        <li><a href="{{route('pages',['page'=>'materials'])}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Registration</a></li>
+                        <li><a href="{{route('pages',['page'=>'materials'])}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Materials</a></li>
                     </ul>
                 </div>
             </div>

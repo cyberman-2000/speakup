@@ -269,6 +269,11 @@
                         <i class="fa fa-user-plus color-muted m-r-5"></i><span class="nav-text">Registered in the course</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('materials.index')}}" aria-expanded="false">
+                        <i class="fa fa-book color-muted m-r-5"></i><span class="nav-text">Materials</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

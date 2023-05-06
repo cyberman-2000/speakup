@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminControllers\AdminHomeController;
 use App\Http\Controllers\ContactPostController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MaterialsController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\SocialMediaController;
@@ -36,6 +37,7 @@ Route::prefix('/admin/adminaka')->middleware(['auth', 'verified'])->group(functi
     Route::resource('news',NewsController::class);
     Route::resource('social',SocialMediaController::class);
     Route::resource('registration',RegistrationController::class);
+    Route::resource('materials',MaterialsController::class);
 });
 //Route::resource('courses',CoursesController::class);
 
