@@ -22,67 +22,91 @@
         </ul>
         <div class="products">
             <!-- Writing -->
-            <div class="element itemBox1 writing" data-item="writing">
-                <img src="" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda commodi.</p>
-                <div class="download-button">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M14 4v4h4v8h-4v4H6v-4H2V8h4V4h8zm-2 0H8v4h4V4zM6 10v8h12v-8H6zm2 2h8v4H8v-4z"></path>
-                    </svg>
-                    <a href="./products/Writing.docx" class="d-text">Download</a>
-                    <svg class="loader" viewBox="0 0 50 50">
-                        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
-                    </svg>
-                </div>
-
-            </div>
-
+            @foreach($materials as $item)
+                @if($item->category == 'writing')
+                        <?php $id=$item->id;?>
+                    <div class="element itemBox1 writing" data-item="writing">
+                        <img src="{{asset("storage/$item->image")}}" alt="{{asset('adminaka/images/docs/'.$item->mime.'.svg')}}">
+                        <p>{{$item->title}}</p>
+                        <p class="mb-0"><small>{{round($item->size/1024/1024,3)}} MB {{$item->mime}}</small></p>
+                        <div class="download-button">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                    <path d="M14 4v4h4v8h-4v4H6v-4H2V8h4V4h8zm-2 0H8v4h4V4zM6 10v8h12v-8H6zm2 2h8v4H8v-4z"></path>
+                            </svg>
+                            <a href="{{route('download',$id)}}" class="d-text">Download</a>
+                            <svg class="loader" viewBox="0 0 50 50">
+                                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
 
             <!-- Reading -->
-            <div class="element itemBox1 reading" data-item="reading">
-                <img src="./unnamed.png" alt="">
-                <p>Reading Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda commodi.</p>
-                <div class="download-button">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M14 4v4h4v8h-4v4H6v-4H2V8h4V4h8zm-2 0H8v4h4V4zM6 10v8h12v-8H6zm2 2h8v4H8v-4z"></path>
-                    </svg>
-                    <a href="./products/Reading.docx" class="d-text">Download</a>
-                    <svg class="loader" viewBox="0 0 50 50">
-                        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
-                    </svg>
-                </div>
-            </div>
-
+            @foreach($materials as $item)
+                @if($item->category == 'reading')
+                        <?php $id=$item->id;?>
+                    <div class="element itemBox1 reading" data-item="reading">
+                        <img src="{{asset("storage/$item->image")}}" alt="{{asset('adminaka/images/docs/'.$item->mime.'.svg')}}">
+                        <h5>{{$item->book_name}}</h5>
+                        <p>{{$item->title}}</p>
+                        <p class="mb-0"><small>{{round($item->size/1024/1024,3)}} MB {{$item->mime}}</small></p>
+                        <div class="download-button">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M14 4v4h4v8h-4v4H6v-4H2V8h4V4h8zm-2 0H8v4h4V4zM6 10v8h12v-8H6zm2 2h8v4H8v-4z"></path>
+                            </svg>
+                            <a href="{{route('download',$id)}}" class="d-text">Download</a>
+                            <svg class="loader" viewBox="0 0 50 50">
+                                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
 
             <!-- Listening -->
-            <div class="element itemBox3 listening" data-item="listening">
-                <img src="./Без названия.jpg" alt="">
-                <p>Listening Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda commodi.</p>
-                <div class="download-button">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M14 4v4h4v8h-4v4H6v-4H2V8h4V4h8zm-2 0H8v4h4V4zM6 10v8h12v-8H6zm2 2h8v4H8v-4z"></path>
-                    </svg>
-                    <a href="./products/Listening.docx" class="d-text">Download</a>
-                    <svg class="loader" viewBox="0 0 50 50">
-                        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
-                    </svg>
-                </div>
-            </div>
+            @foreach($materials as $item)
+                @if($item->category == 'listening')
+                        <?php $id=$item->id;?>
+                    <div class="element itemBox1 listening" data-item="listening">
+                        <img src="{{asset("storage/$item->image")}}" alt="{{asset('adminaka/images/docs/'.$item->mime.'.svg')}}">
+                        <h5>{{$item->book_name}}</h5>
+                        <p>{{$item->title}}</p>
+                        <p class="mb-0"><small>{{round($item->size/1024/1024,3)}} MB {{$item->mime}}</small></p>
+                        <div class="download-button">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M14 4v4h4v8h-4v4H6v-4H2V8h4V4h8zm-2 0H8v4h4V4zM6 10v8h12v-8H6zm2 2h8v4H8v-4z"></path>
+                            </svg>
+                            <a href="{{route('download',$id)}}" class="d-text">Download</a>
+                            <svg class="loader" viewBox="0 0 50 50">
+                                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
 
             <!-- Speaking -->
-            <div class="element itemBox4 speaking" data-item="speaking">
-                <img src="./unnamed (1).png" alt="">
-                <p>Speaking Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda commodi.</p>
-                <div class="download-button">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M14 4v4h4v8h-4v4H6v-4H2V8h4V4h8zm-2 0H8v4h4V4zM6 10v8h12v-8H6zm2 2h8v4H8v-4z"></path>
-                    </svg>
-                    <a href="./products/Speaking.docx" class="d-text">Download</a>
-                    <svg class="loader" viewBox="0 0 50 50">
-                        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
-                    </svg>
-                </div>
-            </div>
+            @foreach($materials as $item)
+                @if($item->category == 'speaking')
+                        <?php $id=$item->id;?>
+                    <div class="element itemBox1 speaking" data-item="speaking">
+                        <img src="{{asset("storage/$item->image")}}" alt="{{asset('adminaka/images/docs/'.$item->mime.'.svg')}}">
+                        <h5>{{$item->book_name}}</h5>
+                        <p>{{$item->title}}</p>
+                        <p class="mb-0"><small>{{round($item->size/1024/1024,3)}} MB {{$item->mime}}</small></p>
+                        <div class="download-button">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M14 4v4h4v8h-4v4H6v-4H2V8h4V4h8zm-2 0H8v4h4V4zM6 10v8h12v-8H6zm2 2h8v4H8v-4z"></path>
+                            </svg>
+                            <a href="{{route('download',$id)}}" class="d-text">Download</a>
+                            <svg class="loader" viewBox="0 0 50 50">
+                                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
         </div>
     </section>
 
@@ -137,7 +161,5 @@
                 downloadButton.querySelector('.loader').style.display = 'none';
             }, 3000);
         });
-
-
     </script>
 @endsection

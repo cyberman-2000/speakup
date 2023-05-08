@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Courses;
+use App\Models\Materials;
 use App\Models\News;
 use App\Models\Teachers;
 use Illuminate\Http\Request;
@@ -20,6 +21,7 @@ class HomeController extends Controller
         $courses=Courses::query()->orderBy('id')->paginate('4');
         $teachers=Teachers::query()->with('media')->orderBy('id')->paginate('4');
         $news=News::query()->orderBy('id')->paginate('3');
-        return view("ui.$page",compact(['courses','teachers','news']));
+        $materials=Materials::all();
+        return view("ui.$page",compact(['courses','teachers','news','materials']));
     }
 }

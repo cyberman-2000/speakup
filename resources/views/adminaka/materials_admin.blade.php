@@ -138,7 +138,7 @@
                                                     <?php $id=$value->id;?>
                                             <div class="col-lg-3 col-xl-2">
                                                 <div class="file-man-box">
-                                                    <div class="file-img-box"><img width="64px" src="{{asset('adminaka/images/docs/'.$value->mime.'.svg')}}" alt="icon"></div><a href="{{route('materials.show',$id)}}" class="file-download"><i class="fa fa-download"></i></a>
+                                                    <div class="file-img-box"><img width="64px" src="{{asset('adminaka/images/docs/'.$value->mime.'.svg')}}" alt="icon"></div><a href="{{route('download',$id)}}" class="file-download"><i class="fa fa-download"></i></a>
                                                     <div class="file-man-title">
                                                         <h5 class="mb-0 text-overflow">{{$value->book_name}}</h5>
                                                         <p class="mb-0"><small>{{round($value->size/1024/1024,3)}} MB {{$value->mime}}</small></p>
@@ -183,7 +183,7 @@
                                                     <?php $id=$value->id;?>
                                                 <div class="col-lg-3 col-xl-2">
                                                     <div class="file-man-box">
-                                                        <div class="file-img-box"><img width="64px" src="{{asset('adminaka/images/docs/'.$value->mime.'.svg')}}" alt="icon"></div><a href="{{route('materials.show',$id)}}" class="file-download"><i class="fa fa-download"></i></a>
+                                                        <div class="file-img-box"><img width="64px" src="{{asset('adminaka/images/docs/'.$value->mime.'.svg')}}" alt="icon"></div><a href="{{route('download',$id)}}" class="file-download"><i class="fa fa-download"></i></a>
                                                         <div class="file-man-title">
                                                             <h5 class="mb-0 text-overflow">{{$value->book_name}}</h5>
                                                             <p class="mb-0"><small>{{round($value->size/1024/1024,3)}} MB {{$value->mime}}</small></p>
@@ -228,7 +228,7 @@
                                                     <?php $id=$value->id;?>
                                                 <div class="col-lg-3 col-xl-2">
                                                     <div class="file-man-box">
-                                                        <div class="file-img-box"><img width="64px" src="{{asset('adminaka/images/docs/'.$value->mime.'.svg')}}" alt="icon"></div><a href="{{route('materials.show',$id)}}" class="file-download"><i class="fa fa-download"></i></a>
+                                                        <div class="file-img-box"><img width="64px" src="{{asset('adminaka/images/docs/'.$value->mime.'.svg')}}" alt="icon"></div><a href="{{route('download',$id)}}" class="file-download"><i class="fa fa-download"></i></a>
                                                         <div class="file-man-title">
                                                             <h5 class="mb-0 text-overflow">{{$value->book_name}}</h5>
                                                             <p class="mb-0"><small>{{round($value->size/1024/1024,3)}} MB {{$value->mime}}</small></p>
@@ -273,7 +273,7 @@
                                                     <?php $id=$value->id;?>
                                                 <div class="col-lg-3 col-xl-2">
                                                     <div class="file-man-box">
-                                                        <div class="file-img-box"><img  src="{{asset('adminaka/images/docs/'.$value->mime.'.svg')}}" width="64px" alt="icon"></div><a href="{{route('materials.show',$id)}}" class="file-download"><i class="fa fa-download"></i></a>
+                                                        <div class="file-img-box"><img  src="{{asset('adminaka/images/docs/'.$value->mime.'.svg')}}" width="64px" alt="icon"></div><a href="{{route('download',$id)}}" class="file-download"><i class="fa fa-download"></i></a>
                                                         <div class="file-man-title">
                                                             <h5 class="mb-0 text-overflow">{{$value->book_name}}</h5>
                                                             <p class="mb-0"><small>{{round($value->size/1024/1024,3)}} MB {{$value->mime}}</small></p>
@@ -319,7 +319,7 @@
                                                     <?php $id=$value->id;?>
                                                 <div class="col-lg-3 col-xl-2">
                                                     <div class="file-man-box">
-                                                        <div class="file-img-box"><img width="64px" src="{{asset('adminaka/images/docs/'.$value->mime.'.svg')}}" alt="icon"></div><a href="{{route('materials.show',$id)}}" class="file-download"><i class="fa fa-download"></i></a>
+                                                        <div class="file-img-box"><img width="64px" src="{{asset('adminaka/images/docs/'.$value->mime.'.svg')}}" alt="icon"></div><a href="{{route('download',$id)}}" class="file-download"><i class="fa fa-download"></i></a>
                                                         <div class="file-man-title">
                                                             <h5 class="mb-0 text-overflow">{{$value->book_name}}</h5>
                                                             <p class="mb-0"><small>{{round($value->size/1024/1024,3)}} MB {{$value->mime}}</small></p>

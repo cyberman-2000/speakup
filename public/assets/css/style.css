@@ -10423,8 +10423,8 @@ ftco-services {
   display: block;
 } */
 .products .element img {
-    width: 150px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
 }
 .download-button {
     display: flex;

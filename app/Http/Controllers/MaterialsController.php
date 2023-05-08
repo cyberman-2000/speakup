@@ -69,17 +69,8 @@ class MaterialsController extends Controller
      * @param  \App\Models\Materials  $materials
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-//        dd($id);
-        $material=Materials::query()->find($id);
-//        dd($material);
-        $file=$material->path;
-//        dd($material->full_mime);
-        $headers=array(
-            "Content_Type: $material->full_mime",
-        ) ;
-        return Storage::download("$file","$material->book_name",$headers);
     }
 
     /**
@@ -115,4 +106,14 @@ class MaterialsController extends Controller
     {
         //
     }
+//    public function download($id){
+//        $material=Materials::query()->find($id);
+////        dd($material);
+//        $file=$material->path;
+////        dd($material->full_mime);
+//        $headers=array(
+//            "Content_Type: $material->full_mime",
+//        ) ;
+//        return Storage::download("$file","$material->book_name",$headers);
+//    }
 }
