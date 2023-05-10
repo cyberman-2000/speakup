@@ -300,7 +300,7 @@
     ***********************************-->
     <div class="footer">
         <div class="copyright">
-            <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
+            <p>Design by BekDevGroup <a href="https://t.me/javohirrajapboyev"><i class="fa fa-telegram"></i></a> 2023</p>
         </div>
     </div>
     <!--**********************************

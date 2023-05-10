@@ -39,8 +39,8 @@
                             <th scope="col">Count OF Students</th>
                             <th scope="col">Duration</th>
                             <th scope="col-1">When</th>
-                            <th scope="col">About</th>
                             <th scope="col">Cost</th>
+                            <th scope="col">About</th>
                             <th scope="col">Image</th>
                             <th scope="col">Actions</th>
                         </tr>

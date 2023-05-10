@@ -26,7 +26,11 @@
                 @if($item->category == 'writing')
                         <?php $id=$item->id;?>
                     <div class="element itemBox1 writing" data-item="writing">
-                        <img src="{{asset("storage/$item->image")}}" alt="{{asset('adminaka/images/docs/'.$item->mime.'.svg')}}">
+                        @if(!empty($item->image))
+                            <img src="{{asset("storage/$item->image")}}" width="65px" alt="">
+                        @else
+                            <img src="{{asset('adminaka/images/docs/'.$item->mime.'.svg')}}" width="65px" alt="">
+                        @endif
                         <p>{{$item->title}}</p>
                         <p class="mb-0"><small>{{round($item->size/1024/1024,3)}} MB {{$item->mime}}</small></p>
                         <div class="download-button">
@@ -47,7 +51,11 @@
                 @if($item->category == 'reading')
                         <?php $id=$item->id;?>
                     <div class="element itemBox1 reading" data-item="reading">
-                        <img src="{{asset("storage/$item->image")}}" alt="{{asset('adminaka/images/docs/'.$item->mime.'.svg')}}">
+                        @if(!empty($item->image))
+                            <img src="{{asset("storage/$item->image")}}" width="65px" alt="">
+                        @else
+                            <img src="{{asset('adminaka/images/docs/'.$item->mime.'.svg')}}" width="65px" alt="">
+                        @endif
                         <h5>{{$item->book_name}}</h5>
                         <p>{{$item->title}}</p>
                         <p class="mb-0"><small>{{round($item->size/1024/1024,3)}} MB {{$item->mime}}</small></p>
@@ -69,7 +77,11 @@
                 @if($item->category == 'listening')
                         <?php $id=$item->id;?>
                     <div class="element itemBox1 listening" data-item="listening">
-                        <img src="{{asset("storage/$item->image")}}" alt="{{asset('adminaka/images/docs/'.$item->mime.'.svg')}}">
+                        @if(!empty($item->image))
+                            <img src="{{asset("storage/$item->image")}}" width="65px" alt="">
+                        @else
+                            <img src="{{asset('adminaka/images/docs/'.$item->mime.'.svg')}}" width="65px" alt="">
+                        @endif
                         <h5>{{$item->book_name}}</h5>
                         <p>{{$item->title}}</p>
                         <p class="mb-0"><small>{{round($item->size/1024/1024,3)}} MB {{$item->mime}}</small></p>
@@ -91,7 +103,11 @@
                 @if($item->category == 'speaking')
                         <?php $id=$item->id;?>
                     <div class="element itemBox1 speaking" data-item="speaking">
-                        <img src="{{asset("storage/$item->image")}}" alt="{{asset('adminaka/images/docs/'.$item->mime.'.svg')}}">
+                        @if(!empty($item->image))
+                            <img src="{{asset("storage/$item->image")}}" width="65px" alt="">
+                        @else
+                            <img src="{{asset('adminaka/images/docs/'.$item->mime.'.svg')}}" width="65px" alt="">
+                        @endif
                         <h5>{{$item->book_name}}</h5>
                         <p>{{$item->title}}</p>
                         <p class="mb-0"><small>{{round($item->size/1024/1024,3)}} MB {{$item->mime}}</small></p>

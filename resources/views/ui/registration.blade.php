@@ -2,10 +2,8 @@
 @section('content_bar')
     <section class="hero-wrap hero-wrap-2" style="background-image: url('{{asset('assets/images/bg_1.jpg')}}');">
         @if (\Session::has('success'))
-            <div class="alert alert-success" role="alert">
-
+            <div class="alert alert-success bg-warning" role="alert">
                 {!! \Session::get('success') !!}
-
             </div>
         @endif
     <div class="overlay"></div>
@@ -13,7 +11,7 @@
         <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate text-center fadeInUp ftco-animated">
                 <h1 class="mb-2 bread">Registration form</h1>
-                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Registration <i class="ion-ios-arrow-forward"></i></span></p>
+                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Registration <i class="ion-ios-arrow-forward"></i></span></p>
             </div>
         </div>
     </div>
@@ -37,32 +35,18 @@
                         <span class="details">First Name</span>
                         <input name="name" type="text" value="{{old('name')}}" placeholder="First Name" required="">
                     </div>
-{{--                    @error('name')--}}
-{{--                    <div class="alert alert-danger">{{ $message }}</div>--}}
-{{--                    @enderror--}}
                     <div class="user-box">
                         <span class="details">Last Name</span>
                         <input type="text" value="{{old('second_name')}}" name="second_name" placeholder="Last Name" required="">
                     </div>
-{{--                    @error('second_name')--}}
-{{--                    <ul>--}}
-{{--                            <li>{{ $message }}</li>--}}
-{{--                    </ul>--}}
-{{--                    @enderror--}}
                     <div class="user-box">
                         <span class="details">Email</span>
                         <input type="text" value="{{old('email')}}" name="email" placeholder="Email" required="">
                     </div>
-{{--                    @error('email')--}}
-{{--                    <div class="alert alert-danger">{{ $message }}</div>--}}
-{{--                    @enderror--}}
                     <div class="user-box">
                         <span class="details">Phone number</span>
                         <input type="text" value="{{old('phone_number')}}" name="phone_number" placeholder="Phone number" required="">
                     </div>
-{{--                    @error('phone_number')--}}
-{{--                    <div class="alert alert-danger">{{ $message }}</div>--}}
-{{--                    @enderror--}}
                     <div class="user-box">
                         <span class="details">Select your course</span>
                         <select name="course" id="">

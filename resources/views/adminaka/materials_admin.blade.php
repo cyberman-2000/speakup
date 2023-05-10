@@ -110,7 +110,7 @@
 
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                        <button type="submit" class="btn btn-primary">Save</button>
                                     </div>
                                 </form>
                             </div>
@@ -156,9 +156,6 @@
                                         @endforeach
 
                                         {{--                                        End foreach for  files--}}
-                                    </div>
-                                    <div class="text-center mt-3">
-                                        <button type="button" class="btn btn-outline-danger w-md waves-effect waves-light"><i class="mdi mdi-refresh"></i> Load More Files</button>
                                     </div>
                                 </div>
                             </div>

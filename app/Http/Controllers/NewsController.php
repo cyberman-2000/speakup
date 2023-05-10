@@ -16,7 +16,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $new=News::query()->paginate('5');
+        $new=News::query()->paginate('3');
         return view('adminaka.news_admin',compact('new'));
     }
 
@@ -38,7 +38,7 @@ class NewsController extends Controller
      */
     public function store(NewsRequest $request)
     {
-        $image = $request->file('image')->store('images/news/');
+        $image = $request->file('image')->store('images/news');
         $validated=$request->validated();
         $create=News::create([
             'event_name'=>$validated['event_name'],
@@ -69,8 +69,7 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-//        dd($id);
-        $new=News::find($id)->with('teacher');
+        $new=News::find($id);
         return view('adminaka.edit_news',compact(['new','id']));
     }
 

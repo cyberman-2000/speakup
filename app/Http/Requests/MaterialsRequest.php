@@ -26,7 +26,7 @@ class MaterialsRequest extends FormRequest
         return [
             'book_name'=>'required| max:100| min:2',
             'title'=>'required| max:200',
-            'file'=>'required| file| max:155000|mimes:pdf,doc,docx,pptx,xlsx,zip,ppt,xls,xlm,xla,pps,pot,xlsm',
+            'file'=>'file| max:155000|mimes:pdf,doc,docx,pptx,xlsx,zip,ppt,xls,xlm,xla,pps,pot,xlsm',
             'image'=>'sometimes|image|max:819200',
             'category'=>'required|max:100'
         ];
