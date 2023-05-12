@@ -73,7 +73,7 @@
                     </div>
                     {{--                <a href="{{route('teachers.create')}}" class="btn btn-success">ADD</a>--}}
                     <div class="bootstrap-modal">
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">+ ADD TEACHER</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">+ ADD News</button>
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -106,7 +106,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Send message</button>
+                                                <button type="submit" class="btn btn-primary">Save  </button>
                                             </div>
                                         </form>
                                     </div>

@@ -29,7 +29,7 @@
                             <div>
                                 <div class="row p-4 no-gutters align-items-center">
                                     <div class="col-sm-12 col-md-6">
-                                        <h3 class="font-light mb-0"><i class="ti-email mr-2"></i>{{$count}} Unread emails</h3>
+                                        <h3 class="font-light mb-0"><i class="ti-email mr-2"></i>{{$pochta_count}} Unread emails</h3>
                                     </div>
                                 </div>
                                 <!-- Mail list-->

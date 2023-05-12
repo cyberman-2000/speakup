@@ -55,9 +55,11 @@ class RegistrationController extends Controller
      * @param  \App\Models\Registration  $registration
      * @return \Illuminate\Http\Response
      */
-    public function show(Registration $registration)
+    public function show($id)
     {
-        //
+        $regis=Registration::query()->where('id','=',$id)->get();
+        $update= Registration::query()->where('id', '=',$id)->update(['watched' => 1]);
+        return view('adminaka.content_registrated',compact(['regis']));
     }
 
     /**

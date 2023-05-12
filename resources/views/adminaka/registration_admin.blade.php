@@ -17,7 +17,7 @@
                         <h2 class="text-white pb-3">Your Mailbox</h2>
                         <ul class="nav nav-tabs custom-tab border-bottom-0 mt-4" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="inbox-tab" data-toggle="tab" aria-controls="inbox" href="#inbox" role="tab" aria-selected="true">
+                                <a class="nav-link active" id="inbox-tab" data-toggle="tab" aria-controls="inbox"  role="tab" aria-selected="true">
                                     <span class="d-block d-md-none"><i class="ti-email"></i></span>
                                     <span class="d-none d-md-block"> INBOX</span>
                                 </a>
@@ -40,27 +40,30 @@
                                         <table class="table email-table no-wrap table-hover v-middle mb-0 font-14">
                                             <tbody>
                                             @foreach($reg as $value)
-                                                <tr>
-                                                    <td><input type="checkbox" name="id{{$value->id}}" value="{{$value->id}}" id="chk2"></td>
-                                                    <td><i class="fa fa-star text-warning"></i></td>
-                                                    <td>
-                                                        <span class="text-dark font-weight-bold mb-0 text-muted">{{$value->name}} {{$value->second_name}}</span>
-                                                    </td>
-                                                    <td>
-                                                            <?php $id=$value->id;?>
-                                                        <h5>
-                                                            @if($value->watched == 0)  <span class="badge badge-sm badge-pill text-white badge-danger mr-2">New</span>@endif
-                                                            <span class="text-dark">{{$value->email}}</span>
-                                                        </h5>
-                                                    </td>
-                                                    <!-- Attachment -->
-                                                    <td><i class="text-dark font-weight-bold fa fa-phone text-muted"> +998{{$value->phone_number}}</i></td>
-                                                    <td><i class="text-dark font-weight-bold fa fa-book text-muted">{{$value->course}}</i></td>
-                                                    <td><i class="text-dark font-weight-bold fa fa-calendar text-muted">{{$value->days}}</i></td>
-                                                    <td><i class="text-dark font-weight-bold fa fa-clock-o text-muted">{{$value->time}}</i></td>
-                                                    <!-- Time -->
-                                                    <td class=" text-dark font-weight-bold text-muted">{{$value->created_at}}</td>
-                                                </tr>
+                                                    <?php $id=$value->id;?>
+
+                                                    <tr>
+
+                                                        <td><input type="checkbox" name="id{{$value->id}}" value="{{$value->id}}" id="chk2"></td>
+                                                        <td><i class="fa fa-star text-warning"></i></td>
+                                                        <td>
+                                                            <span class="text-dark font-weight-bold mb-0 text-muted">{{$value->name}} {{$value->second_name}}</span>
+                                                        </td>
+                                                        <td>
+                                                            <a href="{{route('registration.show',$id)}}"> <h5>
+                                                                @if($value->watched == 0)  <span class="badge badge-sm badge-pill text-white badge-danger mr-2">New</span>@endif
+                                                                <span class="text-dark">{{$value->email}}</span>
+                                                            </h5></a>
+                                                        </td>
+                                                        <!-- Attachment -->
+                                                        <td><i class="text-dark font-weight-bold fa fa-phone text-muted"> +998{{$value->phone_number}}</i></td>
+                                                        <td><i class="text-dark font-weight-bold fa fa-book text-muted">{{$value->course}}</i></td>
+                                                        <td><i class="text-dark font-weight-bold fa fa-calendar text-muted">{{$value->days}}</i></td>
+                                                        <td><i class="text-dark font-weight-bold fa fa-clock-o text-muted">{{$value->time}}</i></td>
+                                                        <!-- Time -->
+                                                        <td class=" text-dark font-weight-bold text-muted">{{$value->created_at}}</td>
+                                                    </tr>
+
 
                                             @endforeach
                                             <!-- row -->

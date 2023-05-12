@@ -17,12 +17,9 @@ class ContactPostController extends Controller
     {
         $count=0;
         $pochta=ContactPost::query()->orderBy('created_at', 'desc')->paginate('10');
-        foreach ($pochta as $item){
-            if ($item->watched==0){
-                $count++;
-            }
-        }
-        return view('adminaka.pochta',compact(['pochta','count']));
+        $pochta_count=ContactPost::query()->where('watched','=',0)->count();
+
+        return view('adminaka.pochta',compact(['pochta','count','pochta_count']));
     }
 
     /**

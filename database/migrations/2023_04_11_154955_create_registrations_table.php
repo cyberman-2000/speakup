@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('course','50');
             $table->string('days','40');
             $table->string('time','40');
+            $table->boolean('watched');
             $table->timestamps();
         });
     }
