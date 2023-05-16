@@ -4252,8 +4252,8 @@ a.badge-dark:focus, a.badge-dark.focus {
     color: inherit; }
 
 .alert-primary {
-    color: #004085;
-    background-color: #cce5ff;
+    color: black;
+    background-color: blue;
     border-color: #b8daff; }
 .alert-primary hr {
     border-top-color: #9fcdff; }
@@ -8937,10 +8937,109 @@ h1, h2, h3, h4, h5,
 .course .img {
     width: 100%;
     height: 300px; }
-@media (max-width: 991.98px) {
+@media only screen and (max-width: 1841px) {
     .course .img {
         width: 100%;
-        height: 300px; } }
+        height: 396px;
+    }
+}
+@media only screen and (max-width: 1618px) {
+    .course .img {
+        width: 100%;
+        height: 345px;
+    }
+}
+@media only screen and (max-width: 1415px) {
+    .course .img {
+        width: 100%;
+        height: 298px;
+    }
+}
+
+@media only screen and (max-width: 1258px) {
+    .course .img {
+        width: 100%;
+        height: 264px;
+    }
+}
+@media only screen and (max-width: 1155px) {
+    .course .img {
+        width: 100%;
+        height: 232px;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .course .img {
+        width: 100%;
+        height: 197px;
+    }
+}
+@media only screen and (max-width: 872px) {
+    .course .img {
+        width: 100%;
+        height: 175px;
+    }
+}
+@media only screen and (max-width: 769px) {
+    .course .img {
+        width: 100%;
+        height: 662px;
+    }
+}
+@media only screen and (max-width: 664px) {
+    .course .img {
+        width: 100%;
+        height: 597px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .course .img {
+        width: 100%;
+        height: 532px;
+    }
+}
+@media only screen and (max-width: 528px) {
+    .course .img {
+        width: 100%;
+        height: 453px;
+    }
+}
+@media only screen and (max-width: 469px) {
+    .course .img {
+        width: 100%;
+        height: 394px;
+    }
+}
+@media only screen and (max-width: 411px) {
+    .course .img {
+        width: 100%;
+        height: 333px;
+    }
+}
+@media only screen and (max-width: 364px) {
+    .course .img {
+        width: 100%;
+        height: 291px;
+    }
+}
+@media only screen and (max-width: 325px) {
+    .course .img {
+        width: 100%;
+        height: 264px;
+    }
+}
+@media only screen and (max-width: 292px) {
+    .course .img {
+        width: 100%;
+        height: 228px;
+    }
+}
+@media only screen and (max-width: 259px) {
+    .course .img {
+        width: 100%;
+        height: 194px;
+    }
+}
 
 .staff {
     overflow: hidden;
@@ -10323,6 +10422,7 @@ textarea.form-control {
     100% {
         stroke-dasharray: 89, 200;
         stroke-dashoffset: -136px; } }
+/* animatsiya boshlanishi*/
 ftco-services {
     padding: 0 0 5em 0; }
 .ftco-services .services {
@@ -10343,8 +10443,8 @@ ftco-services {
     position: absolute;
     left: -6px;
     top: -6px;
-    width: calc(100% + 12px);
-    height: calc(100% + 12px);
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
     /* background: #333; */
     background-image: linear-gradient(45deg, #ff3c41, #ff8a25, #ffe04f, #4fff88, #56ffef, #37b4ff, #c05aff, #ff3c41, #ff8a25, #ffe04f, #4fff88, #56ffef, #37b4ff, #c05aff);
     background-size: 500%;
@@ -10360,10 +10460,10 @@ ftco-services {
 }
 .ftco-services .bg-primary::after {
     filter: blur(10px);
-    background: #fd5f00;
+    background: #e0101a;
     z-index: -1;
 }
-
+/*Animatsiya tamom bo'lishi*/
 
 @keyframes position {
     0% {
@@ -10423,8 +10523,9 @@ ftco-services {
   display: block;
 } */
 .products .element img {
-    width: 60px;
-    height: 60px;
+    width: 200px;
+    height: 106px;
+    height: 106px;
 }
 .download-button {
     display: flex;

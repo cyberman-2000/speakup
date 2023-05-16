@@ -1,32 +1,97 @@
 @extends('layouts.layout')
 @section('content_bar')
-    <section class="home-slider owl-carousel">
-        <div class="slider-item" style="background-image:url({{asset('assets/images/bg_1.jpg')}});">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
-                    <div class="col-md-6 ftco-animate">
-                        <h1 class="mb-4">Education Needs Complete Solution</h1>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                        <p><a href="#" class="btn btn-primary px-4 py-3 mt-3">Contact Us</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    @if (\Session::has('success'))
+        <div class="alert alert-success" role="alert">
 
-        <div class="slider-item" style="background-image:url({{asset('assets/images/bg_2.jpg')}});">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
-                    <div class="col-md-6 ftco-animate">
-                        <h1 class="mb-4">University, College School Education</h1>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                        <p><a href="#" class="btn btn-primary px-4 py-3 mt-3">Contact Us</a></p>
-                    </div>
-                </div>
-            </div>
+            {!! \Session::get('success') !!}
+
         </div>
-    </section>
+    @endif
+
+{{--    <main class="main-content">--}}
+{{--        <section class="slideshow">--}}
+{{--            <div class="slideshow-inner">--}}
+{{--                <div class="slides">--}}
+{{--                    <div class="slide is-active ">--}}
+{{--                        <div class="slide-content">--}}
+{{--                            <div class="caption">--}}
+{{--                                <div class="title">Slide title 1</div>--}}
+{{--                                <div class="text">--}}
+{{--                                    <p>Slide description 1</p>--}}
+{{--                                </div>--}}
+{{--                                <a href="#" class="btnl">--}}
+{{--                                    <span class="btn-inner">Learn More</span>--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="image-container">--}}
+{{--                            <img src="{{asset('assets/images/bg_1.jpg')}}" alt="" class="image" />--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="slide ">--}}
+{{--                        <div class="slide-content">--}}
+{{--                            <div class="caption">--}}
+{{--                                <div class="title">Slide title 2</div>--}}
+{{--                                <div class="text">--}}
+{{--                                    <p>Slide description 2</p>--}}
+{{--                                </div>--}}
+{{--                                <a href="#" class="btnl">--}}
+{{--                                    <span class="btn-inner">Learn More</span>--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="image-container">--}}
+{{--                            <img src="{{asset('assets/images/bg_2.jpg')}}" alt="" class="image" />--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="slide">--}}
+{{--                        <div class="slide-content">--}}
+{{--                            <div class="caption">--}}
+{{--                                <div class="title">Slide title 3</div>--}}
+{{--                                <div class="text">--}}
+{{--                                    <p>Slide description 3</p>--}}
+{{--                                </div>--}}
+{{--                                <a href="#" class="btnl">--}}
+{{--                                    <span class="btn-inner">Learn More</span>--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="image-container">--}}
+{{--                            <img src="{{asset('assets/images/bg_3.jpg')}}" alt="" class="image" />--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="pagination">--}}
+{{--                    <div class="item is-active">--}}
+{{--                        <span class="icon">1</span>--}}
+{{--                    </div>--}}
+{{--                    <div class="item">--}}
+{{--                        <span class="icon">2</span>--}}
+{{--                    </div>--}}
+{{--                    <!-- <div class="item">--}}
+{{--                      <span class="icon">3</span>--}}
+{{--                    </div> -->--}}
+{{--                    <div class="item">--}}
+{{--                        <span class="icon">3</span>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="arrows">--}}
+{{--                    <div class="arrow prev">--}}
+{{--                <span class="svg svg-arrow-left">--}}
+{{--                  <svg version="1.1" id="svg4-Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="26px" viewBox="0 0 14 26" enable-background="new 0 0 14 26" xml:space="preserve"> <path d="M13,26c-0.256,0-0.512-0.098-0.707-0.293l-12-12c-0.391-0.391-0.391-1.023,0-1.414l12-12c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L2.414,13l11.293,11.293c0.391,0.391,0.391,1.023,0,1.414C13.512,25.902,13.256,26,13,26z"/> </svg>--}}
+{{--                  <span class="alt sr-only"></span>--}}
+{{--                </span>--}}
+{{--                    </div>--}}
+{{--                    <div class="arrow next">--}}
+{{--                <span class="svg svg-arrow-right">--}}
+{{--                  <svg version="1.1" id="svg5-Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="26px" viewBox="0 0 14 26" enable-background="new 0 0 14 26" xml:space="preserve"> <path d="M1,0c0.256,0,0.512,0.098,0.707,0.293l12,12c0.391,0.391,0.391,1.023,0,1.414l-12,12c-0.391,0.391-1.023,0.391-1.414,0s-0.391-1.023,0-1.414L11.586,13L0.293,1.707c-0.391-0.391-0.391-1.023,0-1.414C0.488,0.098,0.744,0,1,0z"/> </svg>--}}
+{{--                  <span class="alt sr-only"></span>--}}
+{{--                </span>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </section>--}}
+{{--    </main>--}}
 
     <section class="ftco-services ftco-no-pb">
         <div class="container-wrap">
@@ -83,63 +148,79 @@
         <div class="container">
             <div class="row d-flex">
                 <div class="col-md-5 order-md-last wrap-about wrap-about d-flex align-items-stretch">
-                    <div class="img" style="background-image: url({{asset('assets/images/about.jpg')}});"></div>
+                    <div class="img" style="background-image: url({{asset('assets/images/about.jpg')}})"></div>
                 </div>
                 <div class="col-md-7 wrap-about py-5 pr-md-4 ftco-animate">
-                    <h2 class="mb-4">What We Offer</h2>
-                    <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.</p>
+                    <div data-aos="fade-down">
+                        <h2 class="mb-4">What We Offer</h2>
+                    </div>
+                    <div data-aos="fade-up">
+                        <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.</p>
+                    </div>
                     <div class="row mt-5">
                         <div class="col-lg-6">
-                            <div class="services-2 d-flex">
-                                <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-security"></span></div>
-                                <div class="text pl-3">
-                                    <h3>Safety First</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                            <div data-aos="flip-left">
+                                <div class="services-2 d-flex">
+                                    <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-security"></span></div>
+                                    <div class="text pl-3">
+                                        <h3>Advanced knowledge</h3>
+                                        <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="services-2 d-flex">
-                                <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-reading"></span></div>
-                                <div class="text pl-3">
-                                    <h3>Regular Classes</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                            <div data-aos="flip-right">
+                                <div class="services-2 d-flex">
+                                    <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-reading"></span></div>
+                                    <div class="text pl-3">
+                                        <h3>Great atmosphere</h3>
+                                        <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="services-2 d-flex">
-                                <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-diploma"></span></div>
-                                <div class="text pl-3">
-                                    <h3>Certified Teachers</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                            <div data-aos="flip-up">
+                                <div class="services-2 d-flex">
+                                    <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-diploma"></span></div>
+                                    <div class="text pl-3">
+                                        <h3>Certified Teachers</h3>
+                                        <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="services-2 d-flex">
-                                <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-education"></span></div>
-                                <div class="text pl-3">
-                                    <h3>Sufficient Classrooms</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                            <div data-aos="flip-down">
+                                <div class="services-2 d-flex">
+                                    <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-education"></span></div>
+                                    <div class="text pl-3">
+                                        <h3>Sufficient Classrooms</h3>
+                                        <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="services-2 d-flex">
-                                <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-jigsaw"></span></div>
-                                <div class="text pl-3">
-                                    <h3>Creative Lessons</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                            <div data-aos="zoom-in">
+                                <div class="services-2 d-flex">
+                                    <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-jigsaw"></span></div>
+                                    <div class="text pl-3">
+                                        <h3>Creative Lessons</h3>
+                                        <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="services-2 d-flex">
-                                <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-kids"></span></div>
-                                <div class="text pl-3">
-                                    <h3>Sports Facilities</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                            <div data-aos="zoom-in-up">
+                                <div class="services-2 d-flex">
+                                    <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-kids"></span></div>
+                                    <div class="text pl-3">
+                                        <h3>Speaking clubs</h3>
+                                        <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -154,18 +235,22 @@
         <div class="container">
             <div class="row justify-content-center mb-5 pb-2 d-flex">
                 <div class="col-md-6 align-items-stretch d-flex">
-                    <div class="img img-video d-flex align-items-center" style="background-image: url({{asset('assets/images/about-2.jpg')}});">
+                    <div class="img img-video d-flex align-items-center" style="background-image: url({{asset('assets/images/about-2.jpg') }});">
                         <div class="video justify-content-center">
-                            <a href="https://vimeo.com/45830194" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
+                            <a href="./intro/intro.MP4" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
                                 <span class="ion-ios-play"></span>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 heading-section heading-section-white ftco-animate pl-lg-5 pt-md-0 pt-5">
-                    <h2 class="mb-4">Fox University</h2>
-                    <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                    <div data-aos="zoom-out-up">
+                        <h2 class="mb-4">Speak UP - Learning center</h2>
+                    </div>
+                    <div data-aos="zoom-out-down">
+                        <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                    </div>
                 </div>
             </div>
             <div class="row d-md-flex align-items-center justify-content-center">
@@ -184,7 +269,7 @@
                             <div class="block-18">
                                 <div class="icon"><span class="flaticon-doctor"></span></div>
                                 <div class="text">
-                                    <strong class="number" data-number="401">0</strong>
+                                    <strong class="number" data-number="300">0</strong>
                                     <span>Students</span>
                                 </div>
                             </div>
@@ -193,7 +278,7 @@
                             <div class="block-18">
                                 <div class="icon"><span class="flaticon-doctor"></span></div>
                                 <div class="text">
-                                    <strong class="number" data-number="30">0</strong>
+                                    <strong class="number" data-number="4">0</strong>
                                     <span>Courses</span>
                                 </div>
                             </div>
@@ -202,8 +287,8 @@
                             <div class="block-18">
                                 <div class="icon"><span class="flaticon-doctor"></span></div>
                                 <div class="text">
-                                    <strong class="number" data-number="50">0</strong>
-                                    <span>Awards Won</span>
+                                    <strong class="number" data-number="80">0</strong>
+                                    <span>Certified students</span>
                                 </div>
                             </div>
                         </div>
@@ -218,23 +303,32 @@
         <div class="container-fluid px-4">
             <div class="row justify-content-center mb-5 pb-2">
                 <div class="col-md-8 text-center heading-section ftco-animate">
-                    <h2 class="mb-4"><span>Our</span> Courses</h2>
-                    <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
+                    <div data-aos="fade-up"
+                         data-aos-duration="3000">
+                        <h2 class="mb-4"><span>Our</span> Courses</h2>
+                    </div>
+                    <div data-aos="fade-down"
+                         data-aos-easing="linear"
+                         data-aos-duration="1500">
+                        <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 @foreach($courses as $value)
                 <div class="col-md-3 course ftco-animate">
-                    <div class="img" style="background-image: url({{asset("storage/$value->image")}});"></div>
-                    <div class="text pt-4">
-                        <p class="meta d-flex">
-                            <span><i class="icon-key mr-2"></i>{{$value->course_name}}</span>
-                            <span><i class="icon-user mr-2"></i>{{$value->count_students}} students</span>
-                            <span><i class="icon-calendar mr-2"></i>{{$value->duration}}</span>
-                        </p>
-                        <h3><a href="registration.html">{{$value->course_name}}</a></h3>
-                        <p>{{$value->about}}</p>
-                        <p><a href="{{route('pages',['page'=>'registration'])}}" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center custom-btn btn-9">Apply now</a></p>
+                    <div data-aos="zoom-in">
+                        <div class="img" style="background-image: url({{asset("storage/$value->image")}});"></div>
+                        <div class="text pt-4">
+                            <p class="meta d-flex">
+                                <span><i class="icon-key mr-2"></i>{{$value->course_name}}</span>
+                                <span><i class="icon-user mr-2"></i>{{$value->count_students}} students</span>
+                                <span><i class="icon-calendar mr-2"></i>{{$value->duration}}</span>
+                            </p>
+                            <h3><a href="registration.html">{{$value->course_name}}</a></h3>
+                            <p>{{$value->about}}</p>
+                            <p><a href="{{route('pages',['page'=>'registration'])}}" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center custom-btn btn-9">Apply now</a></p>
+                        </div>
                     </div>
                 </div>
                 @endforeach
@@ -246,31 +340,37 @@
         <div class="container-fluid px-4">
             <div class="row justify-content-center mb-5 pb-2">
                 <div class="col-md-8 text-center heading-section ftco-animate">
-                    <h2 class="mb-4">Certified Teachers</h2>
-                    <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
+                    <div data-aos="flip-up">
+                        <h2 class="mb-4">Certified Teachers</h2>
+                    </div>
+                    <div data-aos="flip-down">
+                        <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
+                    </div>
                 </div>
             </div>
             <div class="row">
 
                 @foreach($teachers as $value)
                 <div class="col-md-6 col-lg-3 ftco-animate">
-                    <div class="staff">
-                        <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image: url({{asset("storage/$value->image")}});"></div>
-                        </div>
-                        <div class="text pt-3 text-center">
-                            <h3>{{$value->name}} {{$value->last_name}}</h3>
-                            <span class="position mb-2">{{$value->role}}</span>
-                            <div class="faded">
-                                <p>{{$value->about}}</p>
-                                <ul class="ftco-social text-center">
-                                    @foreach($value->media as $item)
-                                        <li class="ftco-animate"><a href="{{$item->media_url}}"><span class="icon-{{$item->media_name}}"></span></a></li>
-                                    @endforeach
-                                </ul>
+{{--                     <div data-aos="zoom-out-up">--}}
+                        <div class="staff">
+                            <div class="img-wrap d-flex align-items-stretch">
+                                <div class="img align-self-stretch" style="background-image: url({{asset("storage/$value->image")}});"></div>
+                            </div>
+                            <div class="text pt-3 text-center">
+                                <h3>{{$value->name}} {{$value->last_name}}</h3>
+                                <span class="position mb-2">{{$value->role}}</span>
+                                <div class="faded">
+                                    <p>{{$value->about}}</p>
+                                    <ul class="ftco-social text-center">
+                                        @foreach($value->media as $item)
+                                            <li class="ftco-animate"><a href="{{$item->media_url}}"><span class="icon-{{$item->media_name}}"></span></a></li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
+{{--                    </div>--}}
                 </div>
                 @endforeach
 
@@ -289,33 +389,35 @@
                             <h2 class="mb-4">Feedbacks</h2>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                         </div>
-                        <form action="#" class="appointment-form ftco-animate">
+                        <form action="{{route('comment.store')}}" method="post" class="appointment-form ftco-animate">
+                            @csrf
                             <div class="d-md-flex">
                                 <div class="form-group form-item">
-                                    <input type="text" id="fname" class="form-control">
+                                    <input type="text" id="fname" name="name" required class="form-control">
                                     <label for="fname" class="label">First Name</label>
                                 </div>
                                 <div class="form-group ml-md-4 form-item">
-                                    <input type="text" id="lname" class="form-control">
+                                    <input type="text" id="lname" name="last_name" required class="form-control">
                                     <label for="lname" class="label">Last Name</label>
                                 </div>
                             </div>
                             <div class="d-md-flex">
                                 <div class="form-group">
-                                    <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
+                                    <textarea name="about" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
                                 </div>
                             </div>
+
                             <div class="d-md-flex">
                                 <div class="form-group">
                                     <div class="form-field">
                                         <div class="select-wrap">
                                             <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                            <select name="" id="" class="form-control">
-                                                <option value="">Select Your Course</option>
-                                                <option value="ielts">IELTS</option>
-                                                <option value="grammer">Individual Grammer</option>
-                                                <option value="english">General English</option>
-                                                <option value="speaking">Speaking</option>
+                                            <select required name="whois" id="select" class="form-control">
+                                                <option value=""  disabled selected hidden>Who are you?</option>
+                                                <option value="pupil" style="color: black !important">Pupil</option>
+                                                <option value="parent" style="color: black !important">Parent</option>
+                                                <option value="guest" style="color: black !important">Guest</option>
+                                                <option value="teacher" style="color: black !important">Teacher</option>
                                             </select>
                                         </div>
                                     </div>
@@ -336,8 +438,12 @@
         <div class="container">
             <div class="row justify-content-center mb-5 pb-2">
                 <div class="col-md-8 text-center heading-section ftco-animate">
-                    <h2 class="mb-4"><span>Recent</span> Blog</h2>
-                    <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
+                    <div data-aos="zoom-in-down">
+                        <h2 class="mb-4"><span>Recent</span> Blog</h2>
+                    </div>
+                    <div data-aos="zoom-in">
+                        <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -381,93 +487,36 @@
         </div>
     </section>
 
+    <!-- TESTIMONIALS -->
+    <div class="slide-container swiper">
+        <div class="slide-content">
+            <div class="card-wrapper swiper-wrapper">
+                @foreach($comments as $comment)
+                <div class="card swiper-slide">
+                    <div class="image-content">
+                        <span class="overlay"></span>
 
-    <section class="ftco-section testimony-section">
-        <div class="container">
-            <div class="row justify-content-center mb-5 pb-2">
-                <div class="col-md-8 text-center heading-section ftco-animate">
-                    <h2 class="mb-4">Student Says About Us</h2>
-                    <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
-                </div>
-            </div>
-            <div class="row ftco-animate justify-content-center">
-                <div class="col-md-12">
-                    <div class="carousel-testimony owl-carousel">
-                        <div class="item">
-                            <div class="testimony-wrap d-flex">
-                                <div class="user-img mr-4" style="background-image: url({{asset('assets/images/teacher-1.jpg')}})">
-                                </div>
-                                <div class="text ml-2">
-                  	<span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p class="name">Racky Henderson</p>
-                                    <span class="position">Father</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap d-flex">
-                                <div class="user-img mr-4" style="background-image: url({{asset('assets/images/teacher-2.jpg')}})">
-                                </div>
-                                <div class="text ml-2">
-                  	<span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p class="name">Henry Dee</p>
-                                    <span class="position">Mother</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap d-flex">
-                                <div class="user-img mr-4" style="background-image: url({{asset('assets/images/teacher-3.jpg')}})">
-                                </div>
-                                <div class="text ml-2">
-                  	<span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p class="name">Mark Huff</p>
-                                    <span class="position">Mother</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap d-flex">
-                                <div class="user-img mr-4" style="background-image: url({{asset('assets/images/teacher-4.jpg')}})">
-                                </div>
-                                <div class="text ml-2">
-                  	<span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p class="name">Rodel Golez</p>
-                                    <span class="position">Mother</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap d-flex">
-                                <div class="user-img mr-4" style="background-image: url({{asset('assets/images/teacher-1.jpg')}})">
-                                </div>
-                                <div class="text ml-2">
-                  	<span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p class="name">Ken Bosh</p>
-                                    <span class="position">Mother</span>
-                                </div>
-                            </div>
+                        <div class="card-image">
+                            <img src="{{asset('adminaka/images/comment_avatar/'.$comment->whois.'.png')}}" alt="" class="card-img">
                         </div>
                     </div>
+
+                    <div class="card-content">
+                        <h2 class="name">{{$comment->name}} {{$comment->last_name}}
+                        </h2>
+                        <h5>{{$comment->whois}}</h5>
+                        <p class="description">{{$comment->about}}</p>
+                    </div>
                 </div>
+                @endforeach
             </div>
         </div>
-    </section>
+
+        <div class="swiper-button-next swiper-navBtn"></div>
+        <div class="swiper-button-prev swiper-navBtn"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- END OF TESTIMONIALS -->
 
     <section class="ftco-gallery">
         <div class="container-wrap">

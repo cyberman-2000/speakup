@@ -34,6 +34,7 @@
                                 </div>
                                 <!-- Mail list-->
                                 <div class="table-responsive">
+{{--                                    $count prosto Yuborilgan ochirish uchun id vazifasini inputdaki checkbox bajaradi --}}
                                     <form action="{{route('registration.destroy',$count)}}" method="POST">
                                         @csrf
                                         @method('DELETE')

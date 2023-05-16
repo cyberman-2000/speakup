@@ -40,9 +40,11 @@ class ContactPostController extends Controller
      */
     public function store(PochtaRequest $request)
     {
-//        dd($request);
-        $create=ContactPost::create($request->validated());
-        return redirect()->back()->with('success', 'So\'rovingiz qabul qilindi');
+        if ($request->validated()){
+            $create=ContactPost::create($request->validated());
+            return redirect()->back()->with('success', 'So\'rovingiz qabul qilindi');
+        }
+
     }
 
     /**
@@ -95,6 +97,9 @@ class ContactPostController extends Controller
             if (is_numeric($item)){
             $data[] = $item;
             }
+        }
+        if (empty($data)){
+            return back()->with('success', 'You have not checked anything');
         }
         $delete=ContactPost::whereIN('id',$data)->delete();
         return back()->with('success', 'Emails has been deleted Successfully');

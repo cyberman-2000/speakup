@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminControllers\AdminHomeController;
+use App\Http\Controllers\CommetsController;
 use App\Http\Controllers\ContactPostController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\DownloadController;
@@ -40,6 +41,7 @@ Route::prefix('/admin/adminaka')->middleware(['auth', 'verified'])->group(functi
     Route::resource('registration',RegistrationController::class);
     Route::resource('materials',MaterialsController::class);
 });
+Route::resource('comment',CommetsController::class);
 Route::get('/download/{id}',[DownloadController::class,'download'])->name('download')->middleware(['auth','verified']);
 //Route::resource('courses',CoursesController::class);
 

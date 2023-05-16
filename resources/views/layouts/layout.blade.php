@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-{{--    <link href="{{asset('assets/css/fonts.css')}}" rel="stylesheet">--}}
+    <link href="{{asset('assets/css/fonts.css')}}" rel="stylesheet">
 
     <link rel="stylesheet" href="{{asset('assets/css/open-iconic-bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="{{asset('assets/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/button.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('assets/css/kyu.css')}}">--}}
+
 </head>
 <body>
 <div class="bg-top navbar-light">
@@ -36,14 +39,14 @@
                         <div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
                         <div class="text">
                             <span>Email</span>
-                            <span>speakup@gmail.com</span>
+                            <span>speakuplearningcenter@gmail.com</span>
                         </div>
                     </div>
                     <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
                         <div class="icon d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
                         <div class="text">
                             <span>Call</span>
-                            <span>Call Us: +99897465420</span>
+                            <span>Call Us: +998999681177</span>
                         </div>
                     </div>
                     <div class="col-md topper d-flex align-items-center justify-content-end">
@@ -63,12 +66,6 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
         </button>
-        <form action="#" class="searchform order-lg-last">
-            <div class="form-group d-flex">
-                <input type="text" class="form-control pl-3" placeholder="Search">
-                <button type="submit" class="form-control search"><span class="ion-ios-search"></span></button>
-            </div>
-        </form>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active"><a href="{{route('home')}}" class="nav-link pl-0">Home</a></li>
@@ -99,9 +96,9 @@
                     <h2 class="ftco-heading-2">Have a Questions?</h2>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><span class="icon icon-map-marker"></span><span class="text">Urganch city, Anna German street</span></li>
-                            <li><p><span class="icon icon-phone"></span><span class="text">+998975564747</span></p></li>
-                            <li><a href="#"><span class="icon icon-envelope"></span><span class="text">speakup@gmail.com</span></a></li>
+                            <li><span class="icon icon-map-marker"></span><span class="text">Urganch city, New Urgench street</span></li>
+                            <li><p><span class="icon icon-phone"></span><span class="text">+998999681177</span></p></li>
+                            <li><a href="#"><span class="icon icon-envelope"></span><span class="text">speakuplearningcenter@gmail.com</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -118,9 +115,9 @@
                             $month=$dat['2'];
                             $year=$dat['3'];
                             $time= $dat['5'];
-                            ?>
+//                            ?>
                     <div class="block-21 mb-4 d-flex">
-                        <a class="blog-img mr-4" style="background-image: url({{asset("storage/$item->image")}});"></a>
+                        <a class="blog-img mr-4" style="background-image: url({--><!--{asset("storage/$item->image")}});"></a>
                         <div class="text">
                             <h3 class="heading"><a href="{{route('pages',['page'=>'news'])}}">{{$item->event_name}}</a></h3>
                             <div class="meta">
@@ -150,10 +147,8 @@
                 <div class="ftco-footer-widget mb-5">
                     <h2 class="ftco-heading-2 mb-0">Connect With Us</h2>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                        <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="icon-telegram"></span></a></li>
+                        <li class="ftco-animate"><a href="https://t.me/ceospeakup"><span class="icon-instagram"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.instagram.com/speakup_lc/"><span class="icon-telegram"></span></a></li>
                     </ul>
                 </div>
             </div>
@@ -171,9 +166,9 @@
 
 <!-- loader -->
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+<script src="{{asset('assets/js/app.js')}}"></script>
 <script src="{{asset('assets/js/jquery-migrate-3.0.1.min.js')}}"></script>
 <script src="{{asset('assets/js/popper.min.js')}}"></script>
 <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
@@ -185,9 +180,8 @@
 <script src="{{asset('assets/js/aos.js')}}"></script>
 <script src="{{asset('assets/js/jquery.animateNumber.min.js')}}"></script>
 <script src="{{asset('assets/js/scrollax.min.js')}}"></script>
-{{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>--}}
-{{--<script src="{{asset('assets/js/google-map.js')}}"></script>--}}
 <script src="{{asset('assets/js/main.js')}}"></script>
+<script src="{{asset('assets/js/slidered.js')}}"></script>
 
 </body>
 </html>

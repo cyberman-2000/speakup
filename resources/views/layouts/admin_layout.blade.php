@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{asset('adminaka/plugins/chartist/css/chartist.min.css')}}">
     <link rel="stylesheet" href="{{asset('adminaka/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.cs')}}s">
     <!-- Custom Stylesheet -->
-    <link href="{{asset('adminaka/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('adminaka/css/styles.css')}}" rel="stylesheet">
     <link href="{{asset('adminaka/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css')}}" rel="stylesheet">
     <!-- Page plugins css -->
     <link href="{{asset('adminaka/plugins/clockpicker/dist/jquery-clockpicker.min.css')}}" rel="stylesheet">
@@ -199,22 +199,22 @@
             <ul class="metismenu" id="menu">
                 <li>
                     <a class="" href="{{route('pochta.index')}}" aria-expanded="false">
-                        <i class="icon-envelope menu-icon"></i> <span class="nav-text">Email</span>
+                        <i class="fa fa-envelope menu-icon"></i> <span class="nav-text">Email</span>
                     </a>
                 </li>
                 <li>
                     <a class="" href="{{route('teachers.index')}}" aria-expanded="false">
-                        <i class="icon-user menu-icon"></i><span class="nav-text">Teachers</span>
+                        <i class="fa fa-user menu-icon"></i><span class="nav-text">Teachers</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('courses.index')}}" aria-expanded="false">
-                        <i class="icon-badge menu-icon"></i><span class="nav-text">Courses</span>
+                        <i class="fa fa-server menu-icon"></i><span class="nav-text">Courses</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('news.index')}}" aria-expanded="false">
-                        <i class="mdi mdi-bullhorn menu-icon"></i><span class="nav-text">News List</span>
+                        <i class="fa fa-bullhorn menu-icon"></i><span class="nav-text">News List</span>
                     </a>
                 </li>
                 <li>
@@ -230,6 +230,11 @@
                 <li>
                     <a href="{{route('materials.index')}}" aria-expanded="false">
                         <i class="fa fa-book color-muted m-r-5"></i><span class="nav-text">Materials</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('comment.index')}}" aria-expanded="false">
+                        <i class="fa fa-commenting color-muted m-r-5"></i><span class="nav-text">Comments</span>
                     </a>
                 </li>
             </ul>

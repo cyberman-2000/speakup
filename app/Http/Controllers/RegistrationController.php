@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RegistrationRequest;
 use App\Models\Registration;
 use Illuminate\Http\Request;
+use function PHPUnit\Framework\isEmpty;
 
 class RegistrationController extends Controller
 {
@@ -44,8 +45,10 @@ class RegistrationController extends Controller
     public function store(RegistrationRequest $request)
     {
 //        dd($request->validated());
+        if ($request->validated()){
         $create=Registration::create($request->validated());
         return redirect()->back()->with('success', 'Siz muvaffaqiyatli kursga yozildingiz. Tez orada siz bilan bo\'glananishadi. Bizni tanlaganingiz uchun Rahmat!!!!');
+        }
 
     }
 
@@ -91,13 +94,16 @@ class RegistrationController extends Controller
      * @param  \App\Models\Registration  $registration
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Registration $registration,Request $request)
+    public function destroy(Request $request,$count)
     {
         $data = [];
         foreach ($request->all() as $item){
             if (is_numeric($item)){
                 $data[] = $item;
             }
+        }
+        if (empty($data)){
+            return back()->with('success', 'You have not checked anything');
         }
         $delete=Registration::whereIN('id',$data)->delete();
         return back()->with('success', 'Registered user/\'s has been deleted Successfully');

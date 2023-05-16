@@ -1,8 +1,9 @@
 @extends('layouts.layout')
 @section('content_bar')
+
     <section class="hero-wrap hero-wrap-2" style="background-image: url('{{asset('assets/images/bg_1.jpg')}}');">
         @if (\Session::has('success'))
-            <div class="alert alert-success bg-warning" role="alert">
+            <div class="alert alert-primary" role="alert">
                 {!! \Session::get('success') !!}
             </div>
         @endif

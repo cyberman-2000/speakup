@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CommentRequest;
 use App\Models\Commets;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class CommetsController extends Controller
      */
     public function index()
     {
-        //
+        $comments=Commets::query()->orderBy('created_at', 'desc')->paginate('9');
+        return view('adminaka/comment_admin',compact(['comments']));
     }
 
     /**
@@ -33,9 +35,12 @@ class CommetsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CommentRequest $request)
     {
-        //
+        if ($request->validated()){
+            $create=Commets::create($request->validated());
+            return redirect()->back()->with('success', 'O\'z fikringizni qo\'ldirganingiz uchun katta rahmat');
+        }
     }
 
     /**
