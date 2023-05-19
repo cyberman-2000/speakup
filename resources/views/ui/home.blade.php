@@ -8,90 +8,106 @@
         </div>
     @endif
 
-{{--    <main class="main-content">--}}
-{{--        <section class="slideshow">--}}
-{{--            <div class="slideshow-inner">--}}
-{{--                <div class="slides">--}}
-{{--                    <div class="slide is-active ">--}}
-{{--                        <div class="slide-content">--}}
-{{--                            <div class="caption">--}}
-{{--                                <div class="title">Slide title 1</div>--}}
-{{--                                <div class="text">--}}
-{{--                                    <p>Slide description 1</p>--}}
-{{--                                </div>--}}
-{{--                                <a href="#" class="btnl">--}}
-{{--                                    <span class="btn-inner">Learn More</span>--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="image-container">--}}
-{{--                            <img src="{{asset('assets/images/bg_1.jpg')}}" alt="" class="image" />--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="slide ">--}}
-{{--                        <div class="slide-content">--}}
-{{--                            <div class="caption">--}}
-{{--                                <div class="title">Slide title 2</div>--}}
-{{--                                <div class="text">--}}
-{{--                                    <p>Slide description 2</p>--}}
-{{--                                </div>--}}
-{{--                                <a href="#" class="btnl">--}}
-{{--                                    <span class="btn-inner">Learn More</span>--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="image-container">--}}
-{{--                            <img src="{{asset('assets/images/bg_2.jpg')}}" alt="" class="image" />--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="slide">--}}
-{{--                        <div class="slide-content">--}}
-{{--                            <div class="caption">--}}
-{{--                                <div class="title">Slide title 3</div>--}}
-{{--                                <div class="text">--}}
-{{--                                    <p>Slide description 3</p>--}}
-{{--                                </div>--}}
-{{--                                <a href="#" class="btnl">--}}
-{{--                                    <span class="btn-inner">Learn More</span>--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="image-container">--}}
-{{--                            <img src="{{asset('assets/images/bg_3.jpg')}}" alt="" class="image" />--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="pagination">--}}
-{{--                    <div class="item is-active">--}}
-{{--                        <span class="icon">1</span>--}}
-{{--                    </div>--}}
-{{--                    <div class="item">--}}
-{{--                        <span class="icon">2</span>--}}
-{{--                    </div>--}}
-{{--                    <!-- <div class="item">--}}
-{{--                      <span class="icon">3</span>--}}
-{{--                    </div> -->--}}
-{{--                    <div class="item">--}}
-{{--                        <span class="icon">3</span>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="arrows">--}}
-{{--                    <div class="arrow prev">--}}
-{{--                <span class="svg svg-arrow-left">--}}
-{{--                  <svg version="1.1" id="svg4-Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="26px" viewBox="0 0 14 26" enable-background="new 0 0 14 26" xml:space="preserve"> <path d="M13,26c-0.256,0-0.512-0.098-0.707-0.293l-12-12c-0.391-0.391-0.391-1.023,0-1.414l12-12c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L2.414,13l11.293,11.293c0.391,0.391,0.391,1.023,0,1.414C13.512,25.902,13.256,26,13,26z"/> </svg>--}}
-{{--                  <span class="alt sr-only"></span>--}}
-{{--                </span>--}}
-{{--                    </div>--}}
-{{--                    <div class="arrow next">--}}
-{{--                <span class="svg svg-arrow-right">--}}
-{{--                  <svg version="1.1" id="svg5-Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="26px" viewBox="0 0 14 26" enable-background="new 0 0 14 26" xml:space="preserve"> <path d="M1,0c0.256,0,0.512,0.098,0.707,0.293l12,12c0.391,0.391,0.391,1.023,0,1.414l-12,12c-0.391,0.391-1.023,0.391-1.414,0s-0.391-1.023,0-1.414L11.586,13L0.293,1.707c-0.391-0.391-0.391-1.023,0-1.414C0.488,0.098,0.744,0,1,0z"/> </svg>--}}
-{{--                  <span class="alt sr-only"></span>--}}
-{{--                </span>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </section>--}}
-{{--    </main>--}}
+    <main class="main-content">
+        <section class="slideshow">
+            <div class="slideshow-inner">
+                <div class="slides">
+                    <div class="slide is-active ">
+                        <div class="slide-content">
+                            <div class="caption">
+                                <div class="title">Slide title 1</div>
+                                <div class="text">
+                                    <p>Slide description 1</p>
+                                </div>
+                                <a href="#" class="btnl">
+                                    <span class="btn-inner">Learn More</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="image-container">
+                            <img src="{{asset('assets/images/def_images/aaaaaaaaaaaaaa.jpg')}}" alt="" class="image" />
+                        </div>
+                    </div>
+                    <div class="slide ">
+                        <div class="slide-content">
+                            <div class="caption">
+                                <div class="title">Slide title 2</div>
+                                <div class="text">
+                                    <p>Slide description 2</p>
+                                </div>
+                                <a href="#" class="btnl">
+                                    <span class="btn-inner">Learn More</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="image-container">
+                            <img src="{{asset('assets/images/def_images/23.jpg')}}" alt="" class="image" />
+                        </div>
+                    </div>
+                    <div class="slide ">
+                        <div class="slide-content">
+                            <div class="caption">
+                                <div class="title">Slide title 3</div>
+                                <div class="text">
+                                    <p>Slide description 3</p>
+                                </div>
+                                <a href="#" class="btnl">
+                                    <span class="btn-inner">Learn More</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="image-container">
+                            <img src="{{asset('assets/images/def_images/07.jpg')}}" alt="" class="image" />
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="caption">
+                                <div class="title">Slide title 4</div>
+                                <div class="text">
+                                    <p>Slide description 4</p>
+                                </div>
+                                <a href="#" class="btnl">
+                                    <span class="btn-inner">Learn More</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="image-container">
+                            <img src="{{asset('assets/images/def_images/01.jpg')}}" alt="" class="image" />
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination">
+                    <div class="item is-active">
+                        <span class="icon">1</span>
+                    </div>
+                    <div class="item">
+                        <span class="icon">2</span>
+                    </div>
+                     <div class="item">
+                      <span class="icon">3</span>
+                    </div>
+                    <div class="item">
+                        <span class="icon">4</span>
+                    </div>
+                </div>
+                <div class="arrows">
+                    <div class="arrow prev">
+                <span class="svg svg-arrow-left">
+                  <svg version="1.1" id="svg4-Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="26px" viewBox="0 0 14 26" enable-background="new 0 0 14 26" xml:space="preserve"> <path d="M13,26c-0.256,0-0.512-0.098-0.707-0.293l-12-12c-0.391-0.391-0.391-1.023,0-1.414l12-12c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L2.414,13l11.293,11.293c0.391,0.391,0.391,1.023,0,1.414C13.512,25.902,13.256,26,13,26z"/> </svg>
+                  <span class="alt sr-only"></span>
+                </span>
+                    </div>
+                    <div class="arrow next">
+                <span class="svg svg-arrow-right">
+                  <svg version="1.1" id="svg5-Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="26px" viewBox="0 0 14 26" enable-background="new 0 0 14 26" xml:space="preserve"> <path d="M1,0c0.256,0,0.512,0.098,0.707,0.293l12,12c0.391,0.391,0.391,1.023,0,1.414l-12,12c-0.391,0.391-1.023,0.391-1.414,0s-0.391-1.023,0-1.414L11.586,13L0.293,1.707c-0.391-0.391-0.391-1.023,0-1.414C0.488,0.098,0.744,0,1,0z"/> </svg>
+                  <span class="alt sr-only"></span>
+                </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <section class="ftco-services ftco-no-pb">
         <div class="container-wrap">
@@ -152,10 +168,10 @@
                 </div>
                 <div class="col-md-7 wrap-about py-5 pr-md-4 ftco-animate">
                     <div data-aos="fade-down">
-                        <h2 class="mb-4">What We Offer</h2>
+                        <h2 class="mb-4">Biz nimani taklif qilamiz</h2>
                     </div>
                     <div data-aos="fade-up">
-                        <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.</p>
+                        <p>Biz xozirki paytda o'quvchilarning band jadvaliga ega ekanligini bilamiz va shunda etibor qaratgan holda, biz murakkab jadvalni moslashtirishga intilamiz. Bizning dasturlarimiz kun davomida, kechasi yoki hafta oxiridagi kunlarda olib borish mumkin..</p>
                     </div>
                     <div class="row mt-5">
                         <div class="col-lg-6">
@@ -163,8 +179,9 @@
                                 <div class="services-2 d-flex">
                                     <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-security"></span></div>
                                     <div class="text pl-3">
-                                        <h3>Advanced knowledge</h3>
-                                        <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                                        <h3>Afzallik Taraflarimiz</h3>
+                                        <p>‘SpeakUp Learning Center’ Edu-Action Taʼlim Konsultantlari tomonidan tasdiqlangan holda, Urganch, Xorazm viloyatida rasmiy IELTS ro'yxatga olish markazi sifatida ish faoliyatini yuritadi
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -174,8 +191,8 @@
                                 <div class="services-2 d-flex">
                                     <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-reading"></span></div>
                                     <div class="text pl-3">
-                                        <h3>Great atmosphere</h3>
-                                        <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                                        <h3>Ajoib Atmosfera</h3>
+                                        <p>"SpeakUp Learning Center" da biz qiziqarli o'yinlar va o'quvchilarimiz orasida komunikatsiyani  ingliz tilida tashkillashtirib yaxshi o'rganishlarini taklif qilamiz. Bizga qimmatli o'quvchilarimizni g'ayrioddiy, tarbiyaviy go'yalarini eshitish va ma'lumot almashishlariga sharoit yaratib berganmiz</p>
                                     </div>
                                 </div>
                             </div>
@@ -185,8 +202,8 @@
                                 <div class="services-2 d-flex">
                                     <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-diploma"></span></div>
                                     <div class="text pl-3">
-                                        <h3>Certified Teachers</h3>
-                                        <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                                        <h3>Ajoib O'qituvchilar</h3>
+                                        <p>Bizning barcha sertifikatlangan o'qituvchilarimiz sizning ingliz tilini o'rganishingiz uchun zarur bo'lgan ishtiyoq va tajribaga ega. Biz sizning maqsadlaringizni tushunadigan va siz bilan  muloqot yuritishga intiladigan o'qituvchilarni ehtiyotkorlik bilan tanlaymiz.</p>
                                     </div>
                                 </div>
                             </div>
@@ -197,7 +214,7 @@
                                     <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-education"></span></div>
                                     <div class="text pl-3">
                                         <h3>Sufficient Classrooms</h3>
-                                        <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                                        <p>At ‘SpeakUp Learning Center’, you will encounter something other than learning an outside language; you will be a piece of our enormous ‘SpeakUp’ family!</p>
                                     </div>
                                 </div>
                             </div>
@@ -208,7 +225,7 @@
                                     <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-jigsaw"></span></div>
                                     <div class="text pl-3">
                                         <h3>Creative Lessons</h3>
-                                        <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                                        <p>We solidly trust that our students learn English quicker when they are having a fabulous time!</p>
                                     </div>
                                 </div>
                             </div>
@@ -219,7 +236,7 @@
                                     <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-kids"></span></div>
                                     <div class="text pl-3">
                                         <h3>Speaking clubs</h3>
-                                        <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                                        <p>Most importantly, speaking clubs can be a lot of fun! They provide a supportive and enjoyable environment where you can learn and grow while also making new friends and connections.</p>
                                     </div>
                                 </div>
                             </div>
@@ -248,7 +265,7 @@
                         <h2 class="mb-4">Speak UP - Learning center</h2>
                     </div>
                     <div data-aos="zoom-out-down">
-                        <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                        <p>Starting officially in 2018 as a Speaking Club in the City Center, our center was every students’ “go-to” place after their studies. By its’ warm only-English environment and ‘educative-fun’ approach, Speaking Club gained more and more attention among both younger and older generation. Analyzing the power and influence the Club on people, we have come up with a good strategy to broaden our mission and courses we offered. Therefore, “SpeakUp” Learning Center opened its doors to prospective students on early March in 2021, offering not only Speaking courses but Individual Grammar, General English and IELTS courses as well.  </p>
                         <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
                     </div>
                 </div>
@@ -489,7 +506,7 @@
 
     <!-- TESTIMONIALS -->
     <div class="slide-container swiper">
-        <div class="slide-content">
+        <div class="slide-contents">
             <div class="card-wrapper swiper-wrapper">
                 @foreach($comments as $comment)
                 <div class="card swiper-slide">
@@ -522,28 +539,28 @@
         <div class="container-wrap">
             <div class="row no-gutters">
                 <div class="col-md-3 ftco-animate">
-                    <a href="{{asset('assets/images/image_1.jpg')}}" class="gallery image-popup img d-flex align-items-center" style="background-image: url({{asset('assets/images/course-1.jpg')}});">
+                    <a href="{{asset('assets/images/def_images/24.jpg')}}" class="gallery image-popup img d-flex align-items-center" style="background-image: url({{asset('assets/images/def_images/24.jpg')}});">
                         <div class="icon mb-4 d-flex align-items-center justify-content-center">
                             <span class="icon-instagram"></span>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-3 ftco-animate">
-                    <a href="{{asset('assets/images/image_2.jpg')}}" class="gallery image-popup img d-flex align-items-center" style="background-image: url({{asset('assets/images/image_2.jpg')}});">
+                    <a href="{{asset('assets/images/def_images/11.jpg')}}" class="gallery image-popup img d-flex align-items-center" style="background-image: url({{asset('assets/images/def_images/11.jpg')}});">
                         <div class="icon mb-4 d-flex align-items-center justify-content-center">
                             <span class="icon-instagram"></span>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-3 ftco-animate">
-                    <a href="{{asset('assets/images/image_3.jpg')}}" class="gallery image-popup img d-flex align-items-center" style="background-image: url({{asset('assets/images/image_3.jpg')}});">
+                    <a href="{{asset('assets/images/def_images/12.jpg')}}" class="gallery image-popup img d-flex align-items-center" style="background-image: url({{asset('assets/images/def_images/12.jpg')}});">
                         <div class="icon mb-4 d-flex align-items-center justify-content-center">
                             <span class="icon-instagram"></span>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-3 ftco-animate">
-                    <a href="{{asset('assets/images/image_4.jpg')}}" class="gallery image-popup img d-flex align-items-center" style="background-image: url({{asset('assets/images/image_4.jpg')}});">
+                    <a href="{{asset('assets/images/def_images/25.jpg')}}" class="gallery image-popup img d-flex align-items-center" style="background-image: url({{asset('assets/images/def_images/25.jpg')}});">
                         <div class="icon mb-4 d-flex align-items-center justify-content-center">
                             <span class="icon-instagram"></span>
                         </div>

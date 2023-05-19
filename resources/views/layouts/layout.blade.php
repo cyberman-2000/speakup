@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/button.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}">
-{{--    <link rel="stylesheet" href="{{asset('assets/css/kyu.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('assets/css/kyu.css')}}">
 
 </head>
 <body>
@@ -31,7 +31,7 @@
     <div class="container">
         <div class="row no-gutters d-flex align-items-center align-items-stretch">
             <div class="col-md-4 d-flex align-items-center py-4">
-                <a class="navbar-brand" href="{{route('pages',['page'=>'home'])}}"><img class="logo" src="{{asset('assets/images/LogoSpeakUpRed.png')}}" alt="logo"></a>
+                <a class="navbar-brand" href="{{route('home')}}"><img class="logo" src="{{asset('assets/images/LogoSpeakUpRed.png')}}" alt="logo"></a>
             </div>
             <div class="col-lg-8 d-block">
                 <div class="row d-flex">
@@ -45,14 +45,14 @@
                     <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
                         <div class="icon d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
                         <div class="text">
-                            <span>Call</span>
-                            <span>Call Us: +998999681177</span>
+                            <span>Telefon</span>
+                            <span>Telefon raqamimiz : +998999681177</span>
                         </div>
                     </div>
                     <div class="col-md topper d-flex align-items-center justify-content-end">
                         <p class="mb-0">
                             <a href="{{route('login')}}" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center custom-btn btn-9">
-                                <span>Login</span>
+                                <span>Kirish</span>
                             </a>
                         </p>
                     </div>
@@ -68,14 +68,14 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a href="{{route('home')}}" class="nav-link pl-0">Home</a></li>
-                <li class="nav-item"><a href="{{route('pages',['page'=>'about'])}}" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="{{route('pages',['page'=>'courses'])}}" class="nav-link">Courses</a></li>
-                <li class="nav-item"><a href="{{route('pages',['page'=>'teachers'])}}" class="nav-link">Staff</a></li>
-                <li class="nav-item"><a href="{{route('pages',['page'=>'news'])}}" class="nav-link">News</a></li>
-                <li class="nav-item"><a href="{{route('pages',['page'=>'contact'])}}" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="{{route('pages',['page'=>'registration'])}}" class="nav-link">Registration</a></li>
-                <li class="nav-item"><a href="{{route('pages',['page'=>'materials'])}}" class="nav-link">Materials</a></li>
+                <li class="nav-item active"><a href="{{route('home')}}" class="nav-link pl-0">UY</a></li>
+                <li class="nav-item"><a href="{{route('pages',['page'=>'about'])}}" class="nav-link">Biz Haqimizda</a></li>
+                <li class="nav-item"><a href="{{route('pages',['page'=>'courses'])}}" class="nav-link">Kurslar</a></li>
+                <li class="nav-item"><a href="{{route('pages',['page'=>'teachers'])}}" class="nav-link">Instruktorlar</a></li>
+                <li class="nav-item"><a href="{{route('pages',['page'=>'news'])}}" class="nav-link">Yangiliklar</a></li>
+                <li class="nav-item"><a href="{{route('pages',['page'=>'contact'])}}" class="nav-link">Biz bilan bo'glanish</a></li>
+                <li class="nav-item"><a href="{{route('pages',['page'=>'registration'])}}" class="nav-link">Kursga yozilish</a></li>
+                <li class="nav-item"><a href="{{route('pages',['page'=>'materials'])}}" class="nav-link">Materiallar</a></li>
             </ul>
         </div>
     </div>
@@ -117,7 +117,7 @@
                             $time= $dat['5'];
 //                            ?>
                     <div class="block-21 mb-4 d-flex">
-                        <a class="blog-img mr-4" style="background-image: url({--><!--{asset("storage/$item->image")}});"></a>
+                        <a class="blog-img mr-4" style="background-image: url({{asset("storage/$item->image")}});"></a>
                         <div class="text">
                             <h3 class="heading"><a href="{{route('pages',['page'=>'news'])}}">{{$item->event_name}}</a></h3>
                             <div class="meta">

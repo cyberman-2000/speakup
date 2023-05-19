@@ -45,12 +45,17 @@
                         </thead>
                         <tbody>
                         @foreach($new as $value)
-                                <?php $id=$value->id;?>
+                                <?php $id=$value->id;
+                                $string=$value->full_information;
+                                $string = substr($string, 0, 200);
+                                $string = rtrim($string, "!,.-");
+                                $string = substr($string, 0, strrpos($string, ' '));
+                                ?>
                             <tr>
                                 <td>{{$value->id}}</td>
                                 <td>{{$value->event_name}}</td>
                                 <td>{{$value->mini_title}}</td>
-                                <td>{{$value->full_information}}</td>
+                                <td>{{$string}} ...</td>
                                 <td>{{$value->when}}</td>
                                 <td><img src="{{asset("storage/$value->image")}}" width="50px" alt=""></td>
                                 <td>

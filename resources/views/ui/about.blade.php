@@ -92,92 +92,34 @@
         </div>
     </section>
 
-    <section class="ftco-section testimony-section">
-        <div class="container">
-            <div class="row justify-content-center mb-5 pb-2">
-                <div class="col-md-8 text-center heading-section ftco-animate">
-                    <h2 class="mb-4">Student Says About Us</h2>
-                    <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
-                </div>
-            </div>
-            <div class="row ftco-animate justify-content-center">
-                <div class="col-md-12">
-                    <div class="carousel-testimony owl-carousel">
-                        <div class="item">
-                            <div class="testimony-wrap d-flex">
-                                <div class="user-img mr-4" style="background-image: url({{asset('assets/images/teacher-1.jpg')}})">
-                                </div>
-                                <div class="text ml-2">
-                  	<span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p class="name">Racky Henderson</p>
-                                    <span class="position">Father</span>
-                                </div>
+    <div class="slide-container swiper">
+        <div class="slide-contents">
+            <div class="card-wrapper swiper-wrapper">
+                @foreach($comments as $comment)
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-image">
+                                <img src="{{asset('adminaka/images/comment_avatar/'.$comment->whois.'.png')}}" alt="" class="card-img">
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="testimony-wrap d-flex">
-                                <div class="user-img mr-4" style="background-image: url({{asset('assets/images/teacher-2.jpg')}})">
-                                </div>
-                                <div class="text ml-2">
-                  	<span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p class="name">Henry Dee</p>
-                                    <span class="position">Mother</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap d-flex">
-                                <div class="user-img mr-4" style="background-image: url({{asset('assets/images/teacher-3.jpg')}})">
-                                </div>
-                                <div class="text ml-2">
-                  	<span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p class="name">Mark Huff</p>
-                                    <span class="position">Mother</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap d-flex">
-                                <div class="user-img mr-4" style="background-image: url({{asset('assets/images/teacher-4.jpg')}})">
-                                </div>
-                                <div class="text ml-2">
-                  	<span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p class="name">Rodel Golez</p>
-                                    <span class="position">Mother</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap d-flex">
-                                <div class="user-img mr-4" style="background-image: url({{asset('assets/images/teacher-1.jpg')}})">
-                                </div>
-                                <div class="text ml-2">
-                  	<span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p class="name">Ken Bosh</p>
-                                    <span class="position">Mother</span>
-                                </div>
-                            </div>
+
+                        <div class="card-content">
+                            <h2 class="name">{{$comment->name}} {{$comment->last_name}}
+                            </h2>
+                            <h5>{{$comment->whois}}</h5>
+                            <p class="description">{{$comment->about}}</p>
                         </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
-    </section>
+
+        <div class="swiper-button-next swiper-navBtn"></div>
+        <div class="swiper-button-prev swiper-navBtn"></div>
+        <div class="swiper-pagination"></div>
+    </div>
 
 
     <section class="ftco-gallery">

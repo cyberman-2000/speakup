@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{asset('adminaka/plugins/chartist/css/chartist.min.css')}}">
     <link rel="stylesheet" href="{{asset('adminaka/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.cs')}}s">
     <!-- Custom Stylesheet -->
-    <link href="{{asset('adminaka/css/styles.css')}}" rel="stylesheet">
+    <link href="{{asset('adminaka/css/style.css')}}" rel="stylesheet">
     <link href="{{asset('adminaka/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css')}}" rel="stylesheet">
     <!-- Page plugins css -->
     <link href="{{asset('adminaka/plugins/clockpicker/dist/jquery-clockpicker.min.css')}}" rel="stylesheet">
@@ -57,7 +57,7 @@
     <div class="nav-header">
         <div class="brand-logo">
             <a href="{{route('admin_home')}}">
-                <b class="logo-abbr"><img src="{{asset('adminaka/images/LogoSpeakUpDD.png')}}" alt=""> </b>
+                <b class="logo-abbr"><img src="{{asset('adminaka/images/s.png')}}" alt=""> </b>
                 <span class="logo-compact"><img src="{{asset('adminaka/images/LogoSpeakUpDD.png')}}" alt=""></span>
                 <span class="brand-title">
                         <img class="pb-2" src="{{asset('adminaka/images/LogoSpeakUpWD.png')}}" width="150px" height="50px" alt="">

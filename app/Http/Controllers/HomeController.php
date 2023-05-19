@@ -16,14 +16,15 @@ class HomeController extends Controller
         $teachers=Teachers::query()->with('media')->orderBy('id')->limit(4)->get();
 //        dd($teachers);
         $news=News::query()->orderBy('id')->paginate('3');
-        $comments=Commets::query()->orderBy('id')->limit(4)->get();
+        $comments=Commets::query()->orderBy('id')->limit(15)->get();
         return view('ui.home',compact(['courses','teachers','news','comments']));
     }
     public function home_pages($page){
         $courses=Courses::query()->orderBy('id')->paginate('4');
         $teachers=Teachers::query()->with('media')->orderBy('id')->paginate('4');
         $news=News::query()->orderBy('id')->paginate('3');
+        $comments=Commets::query()->orderBy('id')->limit(15)->get();
         $materials=Materials::all();
-        return view("ui.$page",compact(['courses','teachers','news','materials']));
+        return view("ui.$page",compact(['courses','teachers','news','materials','comments']));
     }
 }
